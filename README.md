@@ -25,8 +25,6 @@
 <h2>System Architecture</h2>
     <p></p>
 
-    <hr>
-
 <h2>Getting Started</h2>
 
 <h3>Prerequisites</h3>
@@ -66,8 +64,6 @@
         <li><strong>API:</strong> JSON responses use camelCase for all fields to maintain consistency between the Spring Boot backend and React frontend.</li>
         <li><strong>Language:</strong> All code comments and documentation are provided in English without special character accents to ensure environment compatibility.</li>
     </ul>
-
-<hr>
 
 <h2>License</h2>
     <p>This project is developed for educational purposes under the SE302 Software Engineering curriculum.</p>
