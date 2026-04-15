@@ -2,8 +2,6 @@
 
 <p>A specialized dashboard designed to streamline workflow, patient monitoring, and resource management for nursing staff. This project was developed as part of the Software Engineering (SE302) course.</p>
 
-<hr>
-
 <h2>Overview</h2>
     <p>The Patient Care Support System (PCSS) is a web-based application built to assist nurses in clinical environments. It provides a centralized interface for tracking patient status, managing room occupancy, and monitoring critical medical data, ultimately reducing administrative overhead and improving patient care quality.</p>
 
