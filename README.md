@@ -1,4 +1,3 @@
-# Patient Care Support System
 <h1>Patient Care Support System (PCSS)</h1>
 
 <p>A specialized dashboard designed to streamline workflow, patient monitoring, and resource management for nursing staff. This project was developed as part of the Software Engineering (SE302) course.</p>
