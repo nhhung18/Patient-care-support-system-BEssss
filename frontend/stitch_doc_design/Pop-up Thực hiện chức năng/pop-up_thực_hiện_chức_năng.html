@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Action Pop-up</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface-container-high h-screen w-screen relative overflow-hidden font-body-md text-body-md text-on-surface">
+<!-- Simulated Background Content (Patient Details Screen context) -->
+<div class="absolute inset-0 p-container-margin pointer-events-none opacity-40">
+<div class="bg-surface rounded p-lg shadow-sm mb-lg">
+<div class="h-8 bg-surface-variant rounded w-1/3 mb-md"></div>
+<div class="flex gap-md">
+<div class="w-20 h-20 bg-surface-variant rounded-full"></div>
+<div class="flex-1 space-y-sm">
+<div class="h-4 bg-surface-variant rounded w-1/2"></div>
+<div class="h-4 bg-surface-variant rounded w-1/4"></div>
+<div class="h-4 bg-surface-variant rounded w-3/4"></div>
+</div>
+</div>
+</div>
+<div class="bg-surface rounded p-lg shadow-sm h-64">
+<div class="h-6 bg-surface-variant rounded w-1/4 mb-md"></div>
+<div class="space-y-sm">
+<div class="h-4 bg-surface-variant rounded w-full"></div>
+<div class="h-4 bg-surface-variant rounded w-full"></div>
+<div class="h-4 bg-surface-variant rounded w-5/6"></div>
+</div>
+</div>
+</div>
+<!-- Overlay Backdrop -->
+<div class="absolute inset-0 bg-on-background/20 backdrop-blur-sm z-40 flex items-end md:items-center justify-center p-0 md:p-container-margin">
+<!-- Action Pop-up / Bottom Sheet -->
+<div class="w-full max-w-[480px] bg-surface rounded-t-xl md:rounded shadow-xl flex flex-col overflow-hidden animate-[slideUp_0.3s_ease-out]">
+<!-- Handle for mobile -->
+<div class="w-full flex justify-center pt-md pb-sm md:hidden bg-surface">
+<div class="w-12 h-1.5 bg-outline-variant rounded-full"></div>
+</div>
+<!-- Header -->
+<div class="px-container-margin py-md flex items-center justify-between border-b border-surface-variant/50 bg-surface">
+<h2 class="font-title-sm text-title-sm text-on-surface">Thực hiện chức năng</h2>
+<button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container-low text-on-surface-variant transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<!-- Scrollable Content Area -->
+<div class="overflow-y-auto max-h-[663px] p-container-margin flex flex-col gap-lg bg-surface"><!-- Group 1: Hồ sơ và theo dõi -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm px-xs mb-xs">
+<span class="font-label-caps text-label-caps text-primary/80 uppercase tracking-widest">Hồ sơ và theo dõi</span>
+<div class="h-[1px] bg-surface-variant flex-1 opacity-50"></div>
+</div>
+<div class="flex flex-col bg-surface-container-lowest rounded border border-outline-variant/30 overflow-hidden shadow-sm">
+<button class="flex items-center gap-md p-md hover:bg-primary/5 active:bg-primary/10 transition-colors text-left w-full group cursor-pointer">
+<div class="w-9 h-9 rounded bg-primary/10 flex items-center justify-center text-primary transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">assignment</span>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Xem bệnh án</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline/40 group-hover:text-primary transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Group 2: Y lệnh và chỉ định -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm px-xs mb-xs">
+<span class="font-label-caps text-label-caps text-tertiary/80 uppercase tracking-widest">Y lệnh và chỉ định</span>
+<div class="h-[1px] bg-surface-variant flex-1 opacity-50"></div>
+</div>
+<div class="flex flex-col bg-surface-container-lowest rounded border border-outline-variant/30 overflow-hidden shadow-sm divide-y divide-outline-variant/20">
+<button class="flex items-center gap-md p-md hover:bg-tertiary/5 active:bg-tertiary/10 transition-colors text-left w-full group cursor-pointer">
+<div class="w-9 h-9 rounded bg-tertiary/10 flex items-center justify-center text-tertiary transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">prescriptions</span>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Tạo y lệnh</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline/40 group-hover:text-tertiary transition-colors">add</span>
+</button>
+<button class="flex items-center gap-md p-md hover:bg-tertiary/5 active:bg-tertiary/10 transition-colors text-left w-full group cursor-pointer">
+<div class="w-9 h-9 rounded bg-tertiary/10 flex items-center justify-center text-tertiary transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">medical_services</span>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Xem và tạo phiếu chăm sóc</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline/40 group-hover:text-tertiary transition-colors">add</span>
+</button>
+<button class="flex items-center gap-md p-md hover:bg-tertiary/5 active:bg-tertiary/10 transition-colors text-left w-full group cursor-pointer">
+<div class="w-9 h-9 rounded bg-tertiary/10 flex items-center justify-center text-tertiary transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">fluid_med</span>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Xem và tạo phiếu truyền dịch</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline/40 group-hover:text-tertiary transition-colors">add</span>
+</button>
+<button class="flex items-center gap-md p-md hover:bg-surface-container-low active:bg-surface-container transition-colors text-left w-full group cursor-pointer">
+<div class="w-9 h-9 rounded bg-surface-variant/50 flex items-center justify-center text-on-surface-variant transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">history</span>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Lịch sử thực hiện y lệnh</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline/40 group-hover:text-on-surface-variant transition-colors">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Group 3: Điều chuyển và Bàn giao -->
+<div class="flex flex-col gap-sm">
+<div class="flex items-center gap-sm px-xs mb-xs">
+<span class="font-label-caps text-label-caps text-secondary/80 uppercase tracking-widest">Điều chuyển và Bàn giao</span>
+<div class="h-[1px] bg-surface-variant flex-1 opacity-50"></div>
+</div>
+<div class="flex flex-col bg-surface-container-lowest rounded border border-outline-variant/30 overflow-hidden shadow-sm">
+<button class="flex items-center gap-md p-md hover:bg-secondary/5 active:bg-secondary/10 transition-colors text-left w-full group cursor-pointer">
+<div class="w-9 h-9 rounded bg-secondary/10 flex items-center justify-center text-secondary transition-transform group-active:scale-95">
+<span class="material-symbols-outlined text-[22px]">transfer_within_a_station</span>
+</div>
+<div class="flex-1">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Bàn giao bệnh nhân chuyển khoa</span>
+</div>
+<span class="material-symbols-outlined text-[18px] text-outline/40 group-hover:text-secondary transition-colors">chevron_right</span>
+</button>
+</div>
+</div></div>
+<!-- Bottom Padding for safe area on mobile -->
+<div class="h-md bg-surface md:hidden"></div>
+</div>
+</div>
+<style>
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</body></html>

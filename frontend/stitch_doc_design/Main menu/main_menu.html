@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MedCare Manager - Home Menu</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen flex flex-col md:flex-row overflow-x-hidden">
+<!-- TopAppBar (Mobile/Web Header) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(25,118,210,0.05)] md:ml-[280px] md:w-[calc(100%-280px)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-weight="fill" style='font-variation-settings: "FILL" 1;'>medical_services</span>
+<span class="font-headline-md text-headline-md text-blue-700 dark:text-blue-400">MedCare Manager</span>
+</div>
+<div>
+<img alt="Doctor Profile" class="w-10 h-10 rounded-full object-cover border border-slate-200" data-alt="A close-up portrait of a professional healthcare practitioner wearing a white coat and a stethoscope around their neck. The lighting is soft and natural, emphasizing a trustworthy and caring expression. The background is a slightly blurred, modern clinical setting with soft blue and white tones, matching a professional medical application aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQns7Z-z1_AhyMgFvYpoxgnz_RxGH96D743QoLcVQAt38TP59L3N5OI62rUaOR_9RSVkQGmyYRzqlwTLtdyUXk6ONUN4HbJAw2SCWyvD6c7383wGqy4dQAy6_6oZFcCJeN9F9t3wrtQcRzqPhmrvnTuS-kGu0j2MqBHaoSPuVrau_O_m7oL44w-Ti3hQsrag-lM4TVHMnXVSzoEGZMmHYLxP3g-qa4zgwJgpSj4gJXZK7j8yyUm6V0HOpXFyL0A2MkWM0I6FSXUV0"/>
+</div>
+</header>
+<!-- NavigationDrawer (Web Sidebar) -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full py-8 w-[280px] border-r bg-white dark:bg-slate-900 border-slate-100 dark:border-slate-800 z-40">
+<div class="px-6 mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined text-2xl font-black text-blue-700 dark:text-blue-400">medical_services</span>
+<span class="text-2xl font-black text-blue-700 dark:text-blue-400 tracking-tight">MedCare</span>
+</div>
+<div class="px-6 mb-8 flex items-center gap-4">
+<img alt="Medical Practitioner" class="w-12 h-12 rounded-full object-cover" data-alt="A portrait of Dr. Smith, a Chief Resident, wearing a crisp white medical coat. The setting is bright and professional, utilizing soft, natural lighting that highlights a calm and reassuring demeanor. The background features subtle, clean architectural lines typical of a modern hospital environment, aligning with a premium healthcare design system." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_3aPPHMopNHdTdxoeWBzaTu5pjNyctudArxR-t5uUVZTnffQ1512s82GPybPC338OvmhoGSRdfkz1L2X2WjNdyp_Q0CL2ypQiO8wqRVdiaMZ1BdWB8gbGiY4QXzfKHSBpHYDmMBch4ZYDOrOoImQbMdYRbnPsiJ1r6KnvXzphraQyVoc0syqkRx67bXSX7SxLve4FUWZyUcAIhLXA23ua51HHtI2kXj9w_D1GWMrLuELcjAkCqVCxMJwLcdtNDRU4bm71Rvt4DWU"/>
+<div>
+<div class="font-title-sm text-title-sm text-on-surface">Dr. Smith</div>
+<div class="font-body-sm text-body-sm text-outline">Chief Resident</div>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-2 w-full">
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-l-4 border-blue-700 rounded-r-lg font-inter text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent font-inter text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">event</span>
+                Appointments
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent font-inter text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">description</span>
+                Medical Notes
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent font-inter text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">emergency</span>
+                Emergency
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent font-inter text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80 mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 mt-16 md:ml-[280px] p-container-margin md:p-xl pb-32 md:pb-xl">
+<div class="max-w-5xl mx-auto space-y-lg">
+<!-- Welcome / Hero Section -->
+<div class="bg-primary-container rounded p-lg text-on-primary shadow-[0_4px_20px_rgba(25,118,210,0.15)] relative overflow-hidden">
+<div class="relative z-10">
+<h1 class="font-display-lg text-display-lg mb-2">Xin chào, Dr. Smith</h1>
+<p class="font-body-md text-body-md opacity-90 max-w-md">Chào mừng bạn trở lại. Dưới đây là tổng quan các chức năng quản lý hôm nay.</p>
+</div>
+<!-- Decorative Background Pattern -->
+<div class="absolute -right-10 -top-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]">local_hospital</span>
+</div>
+</div>
+<!-- Bento Grid Layout for Functions -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Group 1: Quản lý lưu trú -->
+<div class="lg:col-span-2 space-y-md">
+<h2 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">hotel</span>
+                        Quản lý lưu trú
+                    </h2>
+<div class="grid sm:grid-cols-2 gap-md grid-cols-2">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded p-md border border-surface-variant shadow-[0_4px_20px_rgba(25,118,210,0.04)] hover:shadow-[0_4px_20px_rgba(25,118,210,0.1)] transition-shadow cursor-pointer flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<div class="bg-primary-fixed rounded p-2 text-on-primary-fixed">
+<span class="material-symbols-outlined">meeting_room</span>
+</div>
+<div class="bg-secondary-fixed text-on-secondary-fixed-variant text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wider">Active</div>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Quản lý buồng bệnh</h3>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded p-md border border-surface-variant shadow-[0_4px_20px_rgba(25,118,210,0.04)] hover:shadow-[0_4px_20px_rgba(25,118,210,0.1)] transition-shadow cursor-pointer flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<div class="bg-primary-fixed rounded p-2 text-on-primary-fixed">
+<span class="material-symbols-outlined">swap_horiz</span>
+</div>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Bàn giao ca</h3>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded p-md border border-surface-variant shadow-[0_4px_20px_rgba(25,118,210,0.04)] hover:shadow-[0_4px_20px_rgba(25,118,210,0.1)] transition-shadow cursor-pointer flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<div class="bg-primary-fixed rounded p-2 text-on-primary-fixed">
+<span class="material-symbols-outlined">transfer_within_a_station</span>
+</div>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Bàn giao bệnh nhân</h3>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded p-md border border-surface-variant shadow-[0_4px_20px_rgba(25,118,210,0.04)] hover:shadow-[0_4px_20px_rgba(25,118,210,0.1)] transition-shadow cursor-pointer flex flex-col justify-between h-32">
+<div class="flex justify-between items-start">
+<div class="bg-primary-fixed rounded p-2 text-on-primary-fixed">
+<span class="material-symbols-outlined">table_chart</span>
+</div>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Bảng kê tổng hợp</h3>
+</div>
+</div>
+</div>
+<!-- Right Column: Group 2 & Notes -->
+<div class="space-y-lg">
+<!-- Group 2: Hành chính y tế -->
+<div class="space-y-md">
+<h2 class="font-title-sm text-title-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">folder_managed</span>
+                            Hành chính y tế
+                        </h2>
+<div class="flex flex-col gap-md">
+<div class="bg-surface-container-lowest rounded p-md border border-surface-variant shadow-[0_4px_20px_rgba(25,118,210,0.04)] hover:shadow-[0_4px_20px_rgba(25,118,210,0.1)] transition-shadow cursor-pointer flex items-center gap-4">
+<div class="bg-secondary-container rounded p-3 text-on-secondary-container">
+<span class="material-symbols-outlined">document_scanner</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface flex-1">Scan tài liệu</h3>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+<div class="bg-surface-container-lowest rounded p-md border border-surface-variant shadow-[0_4px_20px_rgba(25,118,210,0.04)] hover:shadow-[0_4px_20px_rgba(25,118,210,0.1)] transition-shadow cursor-pointer flex items-center gap-4">
+<div class="bg-secondary-container rounded p-3 text-on-secondary-container">
+<span class="material-symbols-outlined">history</span>
+</div>
+<h3 class="font-title-sm text-title-sm text-on-surface flex-1">Lịch sử Scan</h3>
+<span class="material-symbols-outlined text-outline">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Note Widget -->
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Footer) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 h-20 pb-safe md:hidden bg-white dark:bg-slate-900 rounded-t-2xl border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(25,118,210,0.08)]">
+<!-- Active Tab: Home -->
+<a class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 bg-blue-50/50 dark:bg-blue-900/20 rounded px-3 py-1 font-inter text-[11px] font-medium tap-highlight-transparent transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" data-weight="fill" style='font-variation-settings: "FILL" 1;'>home</span>
+<span class="">Trang chủ</span>
+</a>
+<!-- Inactive Tabs -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-inter text-[11px] font-medium hover:text-blue-600 dark:hover:text-blue-300 tap-highlight-transparent transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">calendar_month</span>
+<span class="">Lịch làm việc</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-inter text-[11px] font-medium hover:text-blue-600 dark:hover:text-blue-300 tap-highlight-transparent transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">notifications</span>
+<span class="">Thông báo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 font-inter text-[11px] font-medium hover:text-blue-600 dark:hover:text-blue-300 tap-highlight-transparent transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1">person</span>
+<span class="">Cá nhân</span>
+</a>
+</nav>
+</body></html>

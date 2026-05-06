@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tạo y lệnh - MedCare Manager</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+        .tap-highlight-transparent { -webkit-tap-highlight-color: transparent; }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pt-16 pb-24 md:pb-0 md:pl-[280px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(25,118,210,0.05)]">
+<div class="flex items-center gap-4 w-full">
+<button class="text-blue-700 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900/20 p-2 rounded-full transition-colors active:scale-95">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md text-on-surface flex-grow text-center pr-12">Tạo y lệnh</h1>
+</div>
+</header>
+<!-- Navigation Drawer (Sidebar) - Hidden on Mobile -->
+<nav class="hidden md:flex flex-col fixed left-0 top-0 h-full py-8 w-[280px] border-r border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 z-40">
+<div class="px-6 mb-8">
+<div class="text-2xl font-black text-blue-700 dark:text-blue-400 mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+                MedCare Manager
+            </div>
+<div class="flex items-center gap-3">
+<img alt="Doctor Profile" class="w-12 h-12 rounded-full object-cover" data-alt="A professional headshot of a medical practitioner wearing a white coat and stethoscope, set against a clean, softly lit modern clinical background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFk-ta3PdviNgy6ttLyzrSmHmIhdk0Un4IKaoALtAtcdM0RUc4Wtge2DWLZutxnpIhp1TiiXHS6-LqNFOgZ8NygYzUWHBunJ_TzXVH5uahcadBSfe6dO4jjpBo9Xagy4uMhMBrh97wPOGjsVhPMDmBEQuhiwSgPAFmzy_0urJOsJqWp41y99J1wfEbXR8sAdvIC1G8O961WdRTNwoneVyuXAyCnwabxRcJyriZEyC0k9uU4zK2IFVtUkk-el_INVT9GjFGcB_bvLc"/>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Dr. Smith</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chief Resident</p>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1 w-full font-inter text-sm font-medium">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">event</span>
+                Appointments
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">description</span>
+                Medical Notes
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">emergency</span>
+                Emergency
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="p-container-margin max-w-4xl mx-auto space-y-lg">
+<!-- Patient Info Card -->
+<section class="bg-surface-container-lowest rounded p-6 shadow-[0_4px_20px_rgba(25,118,210,0.05)] border border-surface-variant relative overflow-hidden">
+<div class="flex justify-between items-center mb-4">
+<span class="bg-[#d4e3ff] text-[#004786] px-3 py-1 rounded font-label-caps text-[12px] uppercase">Bệnh nhân</span>
+<div class="flex items-center gap-2 px-3 py-1 bg-[#e8f5e9] text-[#2e7d32] rounded-full font-label-caps text-[12px]">
+<span class="w-2 h-2 bg-[#2e7d32] rounded-full"></span>
+            Đang điều trị
+        </div>
+</div>
+<div class="mb-6">
+<h2 class="text-[32px] leading-tight font-bold text-on-surface mb-1">Nguyễn Văn A</h2>
+<p class="text-on-surface-variant font-body-md">Mã BN: <span class="font-semibold text-on-surface">P-98214</span></p>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-surface-variant/30">
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mb-1 tracking-wider">Khoa</p>
+<p class="font-title-sm text-on-surface">Nội Tổng Hợp</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mb-1 tracking-wider">Phòng</p>
+<p class="font-title-sm text-on-surface">402</p>
+</div>
+<div>
+<p class="font-label-caps text-[10px] text-on-surface-variant uppercase mb-1 tracking-wider">Giường</p>
+<p class="font-title-sm text-on-surface">B-12</p>
+</div>
+</div>
+</section>
+<!-- Fixed Section: Bác sĩ phụ trách -->
+<section class="bg-surface-container rounded p-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline">badge</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant uppercase">Bác sĩ phụ trách</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Dr. Smith (Chief Resident)</p>
+</div>
+</div>
+</section>
+<!-- Order Form Form -->
+<form class="space-y-xl">
+<!-- 1. Patient Position -->
+<fieldset class="space-y-sm">
+<legend class="font-title-sm text-title-sm text-on-surface border-b border-surface-variant w-full pb-xs mb-sm">1. Tư thế người bệnh</legend>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+<label class="flex items-center gap-sm p-sm border border-outline-variant rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="text-primary focus:ring-primary w-4 h-4" name="position" type="radio" value="low"/>
+<span class="font-body-md text-body-md">Đầu thấp</span>
+</label>
+<label class="flex items-center gap-sm p-sm border border-outline-variant rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="text-primary focus:ring-primary w-4 h-4" name="position" type="radio" value="30"/>
+<span class="font-body-md text-body-md">Đầu cao 30 độ</span>
+</label>
+<label class="flex items-center gap-sm p-sm border border-outline-variant rounded hover:bg-surface-container-low cursor-pointer transition-colors">
+<input class="text-primary focus:ring-primary w-4 h-4" name="position" type="radio" value="45"/>
+<span class="font-body-md text-body-md">Đầu cao 45 độ</span>
+</label>
+</div>
+</fieldset>
+<!-- 2. Respiratory Support -->
+<fieldset class="space-y-sm">
+<legend class="font-title-sm text-title-sm text-on-surface border-b border-surface-variant w-full pb-xs mb-sm">2. Hỗ trợ hô hấp</legend>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-md">
+<label class="flex items-center gap-sm">
+<input class="rounded text-primary focus:ring-primary w-4 h-4" name="resp_support" type="checkbox" value="oxy"/>
+<span class="font-body-md text-body-md">Thở oxy</span>
+</label>
+<label class="flex items-center gap-sm">
+<input class="rounded text-primary focus:ring-primary w-4 h-4" name="resp_support" type="checkbox" value="ncpap"/>
+<span class="font-body-md text-body-md">NCPAP</span>
+</label>
+<label class="flex items-center gap-sm">
+<input class="rounded text-primary focus:ring-primary w-4 h-4" name="resp_support" type="checkbox" value="ventilator"/>
+<span class="font-body-md text-body-md">Thở máy</span>
+</label>
+<label class="flex items-center gap-sm">
+<input class="rounded text-primary focus:ring-primary w-4 h-4" name="resp_support" type="checkbox" value="other"/>
+<span class="font-body-md text-body-md">Khác</span>
+</label>
+</div>
+<input class="w-full mt-2 rounded border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm p-3" placeholder="Ghi chú chi tiết hỗ trợ hô hấp..." type="text"/>
+</fieldset>
+<!-- 3. Medications -->
+<fieldset class="space-y-lg">
+<legend class="font-title-sm text-title-sm text-on-surface border-b border-surface-variant w-full pb-xs mb-sm">3. Thuốc điều trị</legend>
+<!-- Legend for symbols -->
+<div class="flex flex-wrap gap-4 bg-surface-container-low p-sm rounded mb-4">
+<span class="flex items-center gap-1 font-label-caps text-label-caps text-on-surface-variant"><span class="text-lg">○</span> Kháng sinh</span>
+<span class="flex items-center gap-1 font-label-caps text-label-caps text-on-surface-variant"><span class="text-lg">Δ</span> Kháng viêm</span>
+<span class="flex items-center gap-1 font-label-caps text-label-caps text-on-surface-variant"><span class="text-lg">□</span> An thần</span>
+</div>
+<!-- Medication Sections grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-lg gap-y-md">
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface uppercase block">Truyền tĩnh mạch (IV Infusion)</label>
+<div class="relative">
+<span class="absolute left-3 top-3 text-on-surface-variant text-lg">○</span>
+<input class="w-full pl-10 rounded border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm p-3" placeholder="Nhập kháng sinh truyền TM..." type="text"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-3 text-on-surface-variant text-lg">Δ</span>
+<input class="w-full pl-10 rounded border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm p-3" placeholder="Nhập kháng viêm truyền TM..." type="text"/>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface uppercase block">Tiêm tĩnh mạch (IV Injection)</label>
+<div class="relative">
+<span class="absolute left-3 top-3 text-on-surface-variant text-lg">□</span>
+<input class="w-full pl-10 rounded border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm p-3" placeholder="Nhập an thần tiêm TM..." type="text"/>
+</div>
+<div class="relative">
+<span class="absolute left-3 top-3 text-on-surface-variant text-lg invisible">○</span>
+<input class="w-full pl-10 rounded border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm p-3" placeholder="Thuốc tiêm TM khác..." type="text"/>
+</div>
+</div>
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface uppercase block">Đường uống (Oral)</label>
+<textarea class="w-full rounded border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm p-3" placeholder="Liệt kê thuốc uống..." rows="3"></textarea>
+</div>
+<div class="space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface uppercase block">Các đường khác (Khí dung, bôi...)</label>
+<textarea class="w-full rounded border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm p-3" placeholder="Liệt kê thuốc khí dung, bôi..." rows="3"></textarea>
+</div>
+</div>
+</fieldset>
+<!-- 4. Nutrition & Care -->
+<fieldset class="space-y-sm">
+<legend class="font-title-sm text-title-sm text-on-surface border-b border-surface-variant w-full pb-xs mb-sm">4. Dinh dưỡng &amp; Chăm sóc</legend>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="border border-outline-variant rounded p-sm hover:border-primary transition-colors cursor-pointer bg-surface-container-lowest">
+<label class="flex items-start gap-sm cursor-pointer w-full h-full">
+<input class="mt-1 text-primary focus:ring-primary w-4 h-4" name="care_level" type="radio" value="1"/>
+<div>
+<span class="font-title-sm text-title-sm block mb-1">Chăm sóc Cấp 1</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Theo dõi liên tục, hỗ trợ toàn diện.</span>
+</div>
+</label>
+</div>
+<div class="border border-outline-variant rounded p-sm hover:border-primary transition-colors cursor-pointer bg-surface-container-lowest">
+<label class="flex items-start gap-sm cursor-pointer w-full h-full">
+<input class="mt-1 text-primary focus:ring-primary w-4 h-4" name="care_level" type="radio" value="2"/>
+<div>
+<span class="font-title-sm text-title-sm block mb-1">Chăm sóc Cấp 2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Hỗ trợ một phần, theo dõi định kỳ.</span>
+</div>
+</label>
+</div>
+<div class="border border-outline-variant rounded p-sm hover:border-primary transition-colors cursor-pointer bg-surface-container-lowest">
+<label class="flex items-start gap-sm cursor-pointer w-full h-full">
+<input class="mt-1 text-primary focus:ring-primary w-4 h-4" name="care_level" type="radio" value="3"/>
+<div>
+<span class="font-title-sm text-title-sm block mb-1">Chăm sóc Cấp 3</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tự phục vụ, theo dõi cơ bản.</span>
+</div>
+</label>
+</div>
+</div>
+<div class="mt-4 space-y-sm">
+<label class="font-label-caps text-label-caps text-on-surface uppercase block">Chế độ dinh dưỡng / Tần suất theo dõi</label>
+<textarea class="w-full rounded border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary font-body-sm text-body-sm p-3" placeholder="Ghi chú dinh dưỡng và tần suất..." rows="2"></textarea>
+</div>
+</fieldset>
+<!-- Submit Action -->
+<div class="pt-lg border-t border-surface-variant flex justify-end gap-md">
+<button class="px-6 py-2 rounded font-title-sm text-title-sm text-primary bg-primary/10 hover:bg-primary/20 transition-colors" type="button">
+                    Hủy
+                </button>
+<button class="px-6 py-2 rounded font-title-sm text-title-sm text-on-primary bg-primary hover:bg-primary/90 transition-colors shadow-md" type="button">
+                    Lưu y lệnh
+                </button>
+</div>
+</form>
+</main>
+<!-- BottomNavBar -->
+</body></html>

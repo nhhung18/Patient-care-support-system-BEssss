@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chi tiết bệnh nhân - MedCare Manager</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md min-h-screen pb-[100px] md:pb-lg">
+<!-- Top Navigation (Adaptive Sub-page Header) -->
+<header class="bg-surface-container-lowest border-b border-surface-variant sticky top-0 z-40">
+<div class="flex items-center px-lg h-16 max-w-7xl mx-auto">
+<button class="p-2 -ml-2 rounded-full hover:bg-surface-container-highest transition-colors text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="ml-sm font-headline-md text-headline-md text-on-surface">Chi tiết bệnh nhân</h1>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-lg pt-lg grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Section 1: Administrative Info -->
+<section class="md:col-span-5 lg:col-span-4 flex flex-col gap-md">
+<div class="bg-surface-container-lowest rounded p-lg shadow-[0_4px_20px_rgba(25,118,210,0.08)] flex flex-col items-start">
+<div class="flex justify-between items-center w-full mb-md">
+<span class="bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded font-label-caps text-label-caps">BỆNH NHÂN</span>
+<div class="bg-[#e6f4ea] text-[#137333] px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#137333]"></span>
+        Đang điều trị
+    </div>
+</div>
+<div class="w-full text-left mb-lg">
+<h2 class="font-display-lg text-display-lg text-on-surface mb-xs">Nguyễn Văn A</h2>
+<p class="font-title-sm text-title-sm text-on-surface-variant">Mã BN: <span class="font-bold text-on-surface">P-98214</span></p>
+</div>
+<div class="w-full border-t border-surface-variant pt-md grid grid-cols-3 gap-md text-left">
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">KHOA</span>
+<span class="block font-body-md text-body-md text-on-surface leading-tight">Nội Tổng Hợp</span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">PHÒNG</span>
+<span class="block font-body-md text-body-md text-on-surface">402</span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-xs">GIƯỜNG</span>
+<span class="block font-body-md text-body-md text-on-surface">B-12</span>
+</div>
+</div>
+</div>
+<!-- Quick Status Card -->
+<div class="bg-surface-container-lowest rounded p-lg shadow-[0_4px_20px_rgba(25,118,210,0.08)] flex items-start justify-between">
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface mb-xs">Trạng thái hiện tại</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Phòng 302, Khoa Tim Mạch</p>
+</div>
+<div class="bg-[#e6f4ea] text-[#137333] px-3 py-1 rounded-full font-label-caps text-label-caps flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-[#137333]"></span>
+                    Ổn định
+                </div>
+</div>
+</section>
+<!-- Section 2: Vital Signs Dashboard -->
+<section class="md:col-span-7 lg:col-span-8 flex flex-col gap-lg">
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface mb-md">Dấu hiệu sinh tồn</h3>
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Temperature -->
+<div class="bg-surface-container-lowest rounded p-md shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-t-4 border-[#e53935]">
+<div class="flex items-center gap-sm mb-md text-on-surface-variant">
+<div class="w-8 h-8 rounded-full bg-[#ffebee] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#e53935] text-[18px]" data-icon="device_thermostat">device_thermostat</span>
+</div>
+<span class="font-label-caps text-label-caps">NHIỆT ĐỘ</span>
+</div>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-lg text-display-lg text-on-surface">37.2</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">°C</span>
+</div>
+</div>
+<!-- Blood Pressure -->
+<div class="bg-surface-container-lowest rounded p-md shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-t-4 border-primary">
+<div class="flex items-center gap-sm mb-md text-on-surface-variant">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="favorite">favorite</span>
+</div>
+<span class="font-label-caps text-label-caps">HUYẾT ÁP</span>
+</div>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-lg text-display-lg text-on-surface">120/80</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">mmHg</span>
+</div>
+</div>
+<!-- Heart Rate -->
+<div class="bg-surface-container-lowest rounded p-md shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-t-4 border-[#fb8c00]">
+<div class="flex items-center gap-sm mb-md text-on-surface-variant">
+<div class="w-8 h-8 rounded-full bg-[#fff3e0] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#fb8c00] text-[18px]" data-icon="ecg">ecg</span>
+</div>
+<span class="font-label-caps text-label-caps">NHỊP TIM</span>
+</div>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-lg text-display-lg text-on-surface">75</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">bpm</span>
+</div>
+</div>
+<!-- Respiratory Rate -->
+<div class="bg-surface-container-lowest rounded p-md shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-t-4 border-[#00acc1]">
+<div class="flex items-center gap-sm mb-md text-on-surface-variant">
+<div class="w-8 h-8 rounded-full bg-[#e0f7fa] flex items-center justify-center">
+<span class="material-symbols-outlined text-[#00acc1] text-[18px]" data-icon="air">air</span>
+</div>
+<span class="font-label-caps text-label-caps">NHỊP THỞ</span>
+</div>
+<div class="flex items-baseline gap-xs">
+<span class="font-display-lg text-display-lg text-on-surface">16</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/min</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Details Area (Placeholder for clinical notes, etc) -->
+<div class="bg-surface-container-lowest rounded p-lg shadow-[0_4px_20px_rgba(25,118,210,0.08)] flex-1">
+<div class="flex justify-between items-center mb-md border-b border-surface-variant pb-sm">
+<h3 class="font-title-sm text-title-sm text-on-surface">Ghi chú lâm sàng gần nhất</h3>
+<button class="text-primary font-title-sm text-title-sm hover:text-on-primary-fixed-variant transition-colors">Xem tất cả</button>
+</div>
+<div class="space-y-md">
+<div class="flex gap-md">
+<div class="w-12 h-12 rounded bg-surface flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="edit_document">edit_document</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface mb-xs">Bệnh nhân phản hồi tốt với phác đồ điều trị hiện tại. Không có dấu hiệu sốt trong 24h qua.</p>
+<span class="font-label-caps text-label-caps text-outline">08:00 AM, 24/10/2023 - Dr. Tran</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Main Action Container (Fixed at bottom on mobile, inline or sticky bottom on desktop) -->
+<div class="fixed bottom-0 left-0 w-full bg-surface-container-lowest border-t border-surface-variant p-md z-50 md:relative md:border-none md:bg-transparent md:px-lg md:pt-lg md:pb-xl md:max-w-7xl md:mx-auto mt-auto">
+<div class="flex justify-end">
+<button class="w-full md:w-auto bg-primary text-on-primary hover:bg-on-primary-fixed-variant transition-colors py-sm px-xl rounded font-title-sm text-title-sm shadow-md flex items-center justify-center gap-sm h-[48px]">
+<span class="material-symbols-outlined text-[20px]" data-icon="medical_services">medical_services</span>
+                Thực hiện chức năng
+            </button>
+</div>
+</div>
+</body></html>

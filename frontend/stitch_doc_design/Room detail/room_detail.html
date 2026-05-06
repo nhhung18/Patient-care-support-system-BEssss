@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 16px;
+        }
+        @media (max-width: 640px) {
+            .bed-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background font-body-md text-on-background min-h-screen">
+<!-- Top Navigation Header (Custom Sub-page Variant based on Shared Components Logic) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center px-6 h-16 bg-white border-b border-slate-100 shadow-[0_4px_20px_rgba(25,118,210,0.05)]">
+<button class="mr-4 p-2 rounded-full hover:bg-slate-100 transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-headline-md text-primary">Phòng Hồi sức 101</h1>
+<p class="font-label-caps text-label-caps text-secondary uppercase">Khu vực A - Tầng 1</p>
+</div>
+<div class="ml-auto flex items-center gap-4">
+<div class="hidden md:flex flex-col text-right">
+<span class="font-title-sm text-sm text-on-surface">Dr. Smith</span>
+<span class="text-xs text-secondary">Chief Resident</span>
+</div>
+<img alt="Doctor Profile" class="w-10 h-10 rounded-full border-2 border-primary-fixed-dim object-cover" data-alt="A professional portrait of a medical practitioner in clinical attire, wearing a stethoscope. The setting is a brightly lit, modern hospital office with a soft-focus background of medical equipment. The lighting is high-key and clean, reflecting a professional and empathetic healthcare environment with a dominant palette of soft whites and clinical blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXJAVCa4MRT6YllsO0uheRGSF2VEsSeYmek4jpMMHmCcBcNa-zxPL0q0Ndog5QQZT3xwGriR_d6jjURNl2uPwF2xm6ncOg_z6hezduvqbEz2NdGVfBfvWYRDgudtG3EiOMkn6GP6VLkreYTJ8JJc1sskJCRL4qpxMNA5pZvMkKyzpy3A3jMli0rtL_9k0R_5ReN-_UjSg2jnEOPlmTDJ2BOU01aZ5pYImYSgxNgKw_QeKt3QfspW8PEoM7_FzqbvXQAlneS4MEu2g"/>
+</div>
+</header>
+<main class="pt-24 pb-8 px-container-margin max-w-7xl mx-auto">
+<!-- Search and Filter Section -->
+<!-- Room Statistics Grid -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="bg-primary-container/10 p-4 rounded border border-primary-fixed-dim">
+<p class="font-label-caps text-label-caps text-primary">TỔNG SỐ GIƯỜNG</p>
+<p class="font-display-lg text-display-lg text-primary">12</p>
+</div>
+<div class="bg-emerald-50 p-4 rounded border border-emerald-100">
+<p class="font-label-caps text-label-caps text-emerald-700">HIỆN CÓ</p>
+<p class="font-display-lg text-display-lg text-emerald-700">04</p>
+</div>
+<div class="bg-blue-50 p-4 rounded border border-blue-100">
+<p class="font-label-caps text-label-caps text-blue-700">ĐANG SỬ DỤNG</p>
+<p class="font-display-lg text-display-lg text-blue-700">08</p>
+</div>
+<div class="bg-orange-50 p-4 rounded border border-orange-100">
+<p class="font-label-caps text-label-caps text-orange-700">CHỜ VỆ SINH</p>
+<p class="font-display-lg text-display-lg text-orange-700">01</p>
+</div>
+</section>
+<!-- Bed Grid Display -->
+<div class="bed-grid">
+<!-- Occupied Bed Card -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-l-4 border-primary hover:shadow-md transition-shadow cursor-pointer relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-primary-fixed-dim flex items-center justify-center text-primary font-bold text-xl">01</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Trần Văn Hoàng</h3>
+<p class="text-body-sm text-secondary">ID: BN-99281</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-blue-100 text-blue-700 text-[10px] font-bold rounded uppercase tracking-wider">Đang điều trị</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">medical_information</span>
+<span>Chẩn đoán: Suy hô hấp cấp</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span>Nhập viện: 14:30 - 22/10</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-50 flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-[10px] text-blue-700 font-bold">BS</div>
+<div class="w-6 h-6 rounded-full bg-emerald-100 border-2 border-white flex items-center justify-center text-[10px] text-emerald-700 font-bold">ĐD</div>
+</div>
+<button class="text-primary font-label-caps text-xs flex items-center gap-1 group-hover:underline">
+                        CHI TIẾT <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Empty Bed Card -->
+<div class="bg-surface-container-low p-lg rounded border border-dashed border-outline-variant hover:bg-white hover:border-solid hover:border-primary transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-slate-200 flex items-center justify-center text-slate-500 font-bold text-xl group-hover:bg-primary-fixed-dim group-hover:text-primary transition-colors">02</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-slate-400 group-hover:text-on-surface transition-colors">Giường trống</h3>
+<p class="text-body-sm text-slate-400">Sẵn sàng tiếp nhận</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-bold rounded uppercase tracking-wider">Trống</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-slate-300 group-hover:text-primary">add_circle</span>
+<p class="mt-2 text-xs font-label-caps text-slate-400 group-hover:text-primary">XẾP BỆNH NHÂN MỚI</p>
+</div>
+</div>
+<!-- Occupied Bed Card 2 -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-l-4 border-primary hover:shadow-md transition-shadow cursor-pointer relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-primary-fixed-dim flex items-center justify-center text-primary font-bold text-xl">03</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Lê Thị Mai</h3>
+<p class="text-body-sm text-secondary">ID: BN-88123</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-blue-100 text-blue-700 text-[10px] font-bold rounded uppercase tracking-wider">Đang điều trị</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">medical_information</span>
+<span>Chẩn đoán: Hồi sức sau phẫu thuật</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span>Nhập viện: 08:15 - 23/10</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-50 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">emergency</span>
+<span class="text-xs text-error font-bold">Theo dõi đặc biệt</span>
+</div>
+<button class="text-primary font-label-caps text-xs flex items-center gap-1 group-hover:underline">
+                        CHI TIẾT <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Occupied Bed Card 3 -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-l-4 border-primary hover:shadow-md transition-shadow cursor-pointer relative group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-primary-fixed-dim flex items-center justify-center text-primary font-bold text-xl">04</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Nguyễn Gia Bảo</h3>
+<p class="text-body-sm text-secondary">ID: BN-11204</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-blue-100 text-blue-700 text-[10px] font-bold rounded uppercase tracking-wider">Đang điều trị</span>
+</div>
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">medical_information</span>
+<span>Chẩn đoán: Viêm phổi nặng</span>
+</div>
+<div class="flex items-center gap-2 text-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-sm">schedule</span>
+<span>Nhập viện: 11:20 - 24/10</span>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-slate-50 flex justify-between items-center">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+<span class="text-[10px] text-emerald-600 font-medium">Sinh hiệu ổn định</span>
+</div>
+<button class="text-primary font-label-caps text-xs flex items-center gap-1 group-hover:underline">
+                        CHI TIẾT <span class="material-symbols-outlined text-xs">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Cleaning Bed Card -->
+<div class="bg-orange-50 p-lg rounded border border-orange-200 cursor-wait group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-orange-200 flex items-center justify-center text-orange-700 font-bold text-xl">05</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-orange-800">Đang vệ sinh</h3>
+<p class="text-body-sm text-orange-700/70">Dự kiến xong: 15:45</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-orange-200 text-orange-700 text-[10px] font-bold rounded uppercase tracking-wider">Cleaning</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6">
+<span class="material-symbols-outlined text-4xl text-orange-400">vacuum</span>
+<div class="w-full bg-orange-200 h-1 rounded-full mt-4 overflow-hidden">
+<div class="bg-orange-600 h-full w-[65%]"></div>
+</div>
+</div>
+</div>
+<!-- Empty Bed Card 2 -->
+<div class="bg-surface-container-low p-lg rounded border border-dashed border-outline-variant hover:bg-white hover:border-solid hover:border-primary transition-all cursor-pointer group">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded bg-slate-200 flex items-center justify-center text-slate-500 font-bold text-xl group-hover:bg-primary-fixed-dim group-hover:text-primary transition-colors">06</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-slate-400 group-hover:text-on-surface transition-colors">Giường trống</h3>
+<p class="text-body-sm text-slate-400">Sẵn sàng tiếp nhận</p>
+</div>
+</div>
+<span class="px-2 py-1 bg-slate-100 text-slate-500 text-[10px] font-bold rounded uppercase tracking-wider">Trống</span>
+</div>
+<div class="flex flex-col items-center justify-center py-6 opacity-40 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-4xl text-slate-300 group-hover:text-primary">add_circle</span>
+<p class="mt-2 text-xs font-label-caps text-slate-400 group-hover:text-primary">XẾP BỆNH NHÂN MỚI</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Floating Action Button for Emergency or New Patient -->
+</body></html>

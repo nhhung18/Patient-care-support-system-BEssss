@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-white dark:bg-slate-900 shadow-sm border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-icon="medical_services">medical_services</span>
+<h1 class="text-lg font-bold text-blue-700 dark:text-blue-400 font-inter tracking-tight">MedCare Manager</h1>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 rounded-full border-2 border-primary-fixed overflow-hidden">
+<img alt="medical_professional_profile" class="w-full h-full object-cover" data-alt="A professional portrait of a medical professional in a clean, modern clinical environment. The lighting is bright and airy with soft blue undertones reflecting a high-end medical facility. The doctor is wearing a white coat and a stethoscope, conveying expertise and trust. The overall mood is clinical, reliable, and empathetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpBK0h03PWJ64i31NvLyP2Xv07H73lb32jAIq5SbteKCHdCBO4Taywxal4o4b5S4BAXzJtOuotgBSd41doOm0w-mHW7jeY-MSen9ZkdPv4V_5t_o3QWfXD4e2uT9SEbuoWA86Bs0hIm_DY7GCXrR3IyRfWusyGCur5voKVWF_HRjGJT5MZvddWkP2bRYqM24p7wra3NUeveKogz0xaX-8NT8rpSMrRLHBbt4lCF1rUyAGSW6_SgCBcZKqEDuuXS61tBuluC84MS-g"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-container-margin max-w-4xl mx-auto">
+<!-- Page Title & Quick Actions -->
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-display-lg text-display-lg text-primary">Alerts &amp; Notifications</h2>
+<p class="font-body-md text-on-surface-variant">Manage critical patient updates and hospital news.</p>
+</div>
+<button class="bg-secondary-container text-on-secondary-fixed-variant px-md py-sm rounded flex items-center gap-2 font-label-caps text-label-caps hover:bg-outline-variant transition-colors">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span>
+                MARK ALL READ
+            </button>
+</div>
+<!-- Section: Today -->
+<section class="mb-10">
+<div class="flex items-center gap-4 mb-4">
+<h3 class="font-title-sm text-title-sm text-on-surface">Today</h3>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Critical Alert Card -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-l-4 border-error relative overflow-hidden">
+<div class="flex items-start gap-md">
+<div class="bg-error-container text-error p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="emergency" data-weight="fill" style="font-variation-settings: 'FILL' 1;">emergency</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-error bg-error/10 px-2 py-1 rounded-full mb-2 inline-block">CRITICAL VITALS</span>
+<span class="font-body-sm text-on-surface-variant">08:42 AM</span>
+</div>
+<h4 class="font-title-sm text-title-sm mb-1">Patient Alert: Room 402-B</h4>
+<p class="font-body-md text-on-surface-variant">Patient "Jonathan Miller" shows acute oxygen saturation drop (88%). Immediate assessment required.</p>
+</div>
+</div>
+</div>
+<!-- New Medical Order Card -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-l-4 border-primary relative">
+<div class="flex items-start gap-md">
+<div class="bg-primary-fixed text-primary p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="note_alt">note_alt</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-primary bg-primary/10 px-2 py-1 rounded-full mb-2 inline-block">NEW MEDICAL ORDER</span>
+<span class="font-body-sm text-on-surface-variant">10:15 AM</span>
+</div>
+<h4 class="font-title-sm text-title-sm mb-1">Lab Results: Patient #8821</h4>
+<p class="font-body-md text-on-surface-variant">Dr. Sarah Chen updated the hematology report for Jane Smith. New dosage instructions for Warfarin prescribed.</p>
+</div>
+</div>
+</div>
+<!-- Shift Change Notification -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border-l-4 border-secondary relative">
+<div class="flex items-start gap-md">
+<div class="bg-secondary-container text-secondary p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="pending_actions">pending_actions</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-secondary bg-secondary/10 px-2 py-1 rounded-full mb-2 inline-block">SHIFT CHANGE</span>
+<span class="font-body-sm text-on-surface-variant">11:30 AM</span>
+</div>
+<h4 class="font-title-sm text-title-sm mb-1">Nursing Handover Request</h4>
+<p class="font-body-md text-on-surface-variant">Afternoon shift nursing staff for West Wing have arrived. Please confirm patient handover in the system.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Earlier -->
+<section>
+<div class="flex items-center gap-4 mb-4">
+<h3 class="font-title-sm text-title-sm text-on-surface-variant">Earlier</h3>
+<div class="h-[1px] flex-grow bg-outline-variant/30"></div>
+</div>
+<div class="grid grid-cols-1 gap-4 opacity-80">
+<!-- Announcement Card -->
+<div class="bg-surface-container-low p-md rounded border border-outline-variant/20 relative">
+<div class="flex items-start gap-md">
+<div class="bg-tertiary-fixed text-tertiary p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-tertiary bg-tertiary/10 px-2 py-1 rounded-full mb-2 inline-block">ANNOUNCEMENT</span>
+<span class="font-body-sm text-on-surface-variant">Yesterday</span>
+</div>
+<h4 class="font-title-sm text-title-sm mb-1">New Hospital Safety Protocols</h4>
+<p class="font-body-md text-on-surface-variant">Updated infection control procedures for the ICU unit have been published. Please review the documentation.</p>
+</div>
+</div>
+</div>
+<!-- Past Order Card -->
+<div class="bg-surface-container-low p-md rounded border border-outline-variant/20 relative">
+<div class="flex items-start gap-md">
+<div class="bg-primary-fixed text-primary p-3 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="assignment_turned_in">assignment_turned_in</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start">
+<span class="font-label-caps text-label-caps text-primary bg-primary/10 px-2 py-1 rounded-full mb-2 inline-block">COMPLETED ORDER</span>
+<span class="font-body-sm text-on-surface-variant">2 days ago</span>
+</div>
+<h4 class="font-title-sm text-title-sm mb-1">Imaging Study Ready</h4>
+<p class="font-body-md text-on-surface-variant">MRI scans for Patient "Robert Vance" are now available in the portal for review.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Asymmetric Bento-style Info Area -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg mt-12">
+<div class="md:col-span-2 bg-gradient-to-br from-primary-container to-blue-800 text-on-primary-container p-lg rounded relative overflow-hidden shadow-xl">
+<div class="relative z-10">
+<h3 class="font-headline-md text-headline-md mb-2">Hospital Resource Update</h3>
+<p class="font-body-md mb-6 max-w-md">Real-time capacity tracking shows high occupancy in General Ward. All elective procedures for tomorrow have been rescheduled.</p>
+<button class="bg-white text-primary px-lg py-md rounded font-label-caps text-label-caps">VIEW DASHBOARD</button>
+</div>
+<div class="absolute -bottom-10 -right-10 opacity-20 transform rotate-12">
+<span class="material-symbols-outlined text-[160px]" data-icon="analytics">analytics</span>
+</div>
+</div>
+<div class="bg-tertiary-container text-on-tertiary-container p-lg rounded flex flex-col justify-between shadow-lg">
+<span class="material-symbols-outlined text-4xl" data-icon="tips_and_updates">tips_and_updates</span>
+<div>
+<h3 class="font-title-sm text-title-sm mb-1">System Maintenance</h3>
+<p class="font-body-sm">Tonight at 02:00 AM. Portal will be offline for 15 mins.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_20px_rgba(25,118,210,0.08)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform duration-150 hover:text-blue-600 dark:hover:text-blue-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform duration-150 hover:text-blue-600 dark:hover:text-blue-300" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider">Schedule</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded px-5 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="notifications" data-weight="fill" style="font-variation-settings: 'FILL' 1;">notifications</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider">Alerts</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform duration-150 hover:text-blue-600 dark:hover:text-blue-300" href="#">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider">Profile</span>
+</a>
+</nav>
+</body></html>

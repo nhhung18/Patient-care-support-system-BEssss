@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MedCare Manager - Tạo Phiếu Chăm Sóc Con</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+        body {
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background">
+<!-- Page Header -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center px-4 h-16 bg-white border-b border-slate-100 shadow-sm">
+<button class="w-10 h-10 -ml-2 rounded-full flex items-center justify-center hover:bg-slate-100 transition-colors">
+<span class="material-symbols-outlined text-on-surface">arrow_back</span>
+</button>
+<div class="ml-2">
+<h1 class="font-title-sm text-title-sm text-on-surface">Tạo Phiếu chăm sóc con</h1>
+<p class="text-[10px] text-slate-500 font-medium uppercase tracking-wider">Hệ thống MedCare Manager</p>
+</div>
+</header>
+<!-- Main Content Area (Full page, scrollable) -->
+<main class="flex-1 mt-16 pb-24 overflow-y-auto">
+<form class="max-w-3xl mx-auto p-4 space-y-4">
+<!-- Patient & Objectives Card -->
+<div class="bg-white rounded-[24px] p-6 shadow-sm border border-slate-100">
+<div class="flex justify-between items-start mb-4">
+<div class="px-2.5 py-1 bg-[#d4e3ff] rounded">
+<span class="text-[11px] font-bold text-[#005dac] uppercase tracking-wider">Bệnh nhân</span>
+</div>
+<div class="px-3 py-1.5 bg-[#e8f5e9] rounded-full">
+<span class="text-[12px] font-semibold text-[#2e7d32] whitespace-nowrap">Đang điều trị</span>
+</div>
+</div>
+<div class="mb-4">
+<h2 class="text-[32px] font-bold text-on-surface leading-tight">Nguyễn Văn A</h2>
+<p class="text-[16px] text-on-surface-variant mt-1"><span class="font-medium">Mã BN:</span> <span class="font-bold text-on-surface">P-98214</span></p>
+</div>
+<div class="h-px bg-slate-100 w-full mb-6"></div>
+<div class="grid grid-cols-3 gap-4">
+<div>
+<p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Khoa</p>
+<p class="text-[16px] font-bold text-[#526069] leading-tight">Nội Tổng Hợp</p>
+</div>
+<div>
+<p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Phòng</p>
+<p class="text-[18px] font-bold text-[#526069]">402</p>
+</div>
+<div>
+<p class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">Giường</p>
+<p class="text-[18px] font-bold text-[#526069]">B-12</p>
+</div>
+</div>
+</div>
+<!-- Clinical Assessments Sections -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Da, niêm mạc -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">palette</span> Da, niêm mạc
+                    </h3>
+<div class="flex flex-wrap gap-2">
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="skin" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Bình thường</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="skin" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Hồng</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="skin" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Vàng</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="skin" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Nhợt nhạt</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="skin" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Tím tái</span>
+</label>
+</div>
+</div>
+<!-- Tri giác -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">psychology</span> Tri giác
+                    </h3>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-3 px-3 py-2.5 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="con" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Tỉnh táo</span>
+</label>
+<label class="flex items-center gap-3 px-3 py-2.5 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="con" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Lơ mơ</span>
+</label>
+<label class="flex items-center gap-3 px-3 py-2.5 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="con" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Kích thích</span>
+</label>
+<label class="flex items-center gap-3 px-3 py-2.5 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary border-outline-variant focus:ring-primary" name="con" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Hôn mê</span>
+</label>
+</div>
+</div>
+<!-- Phù -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">water_drop</span> Phù
+                    </h3>
+<div class="flex flex-wrap gap-2">
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary" name="edema" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Không phù</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary" name="edema" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Độ 1</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary" name="edema" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Độ 2</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded cursor-pointer border border-transparent hover:border-primary-fixed transition-all">
+<input class="w-4 h-4 text-primary" name="edema" type="radio"/>
+<span class="text-sm font-medium text-on-surface">Độ 3</span>
+</label>
+</div>
+</div>
+<!-- Thang đo Đau -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">mood_bad</span> Thang đo Đau
+                    </h3>
+<div class="grid grid-cols-2 gap-2">
+<label class="flex items-center gap-2 px-3 py-2 bg-green-50 text-green-800 rounded cursor-pointer border border-transparent hover:border-green-200">
+<input class="w-4 h-4 text-green-600 border-green-300" name="pain" type="radio"/>
+<span class="text-sm font-medium">Không đau</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-yellow-50 text-yellow-800 rounded cursor-pointer border border-transparent hover:border-yellow-200">
+<input class="w-4 h-4 text-yellow-600 border-yellow-300" name="pain" type="radio"/>
+<span class="text-sm font-medium">Đau nhẹ</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-orange-50 text-orange-800 rounded cursor-pointer border border-transparent hover:border-orange-200">
+<input class="w-4 h-4 text-orange-600 border-orange-300" name="pain" type="radio"/>
+<span class="text-sm font-medium">Đau vừa</span>
+</label>
+<label class="flex items-center gap-2 px-3 py-2 bg-red-50 text-red-800 rounded cursor-pointer border border-transparent hover:border-red-200">
+<input class="w-4 h-4 text-red-600 border-red-300" name="pain" type="radio"/>
+<span class="text-sm font-medium">Dữ dội</span>
+</label>
+</div>
+</div>
+<!-- Hô hấp -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">air</span> Hô hấp
+                    </h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary focus:ring-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Thở đều, êm</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary focus:ring-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Khó thở / Thở rên</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary focus:ring-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Tăng tiết đờm dãi</span></label>
+</div>
+</div>
+<!-- Tuần hoàn -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">ecg</span> Tuần hoàn
+                    </h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary focus:ring-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Mạch đều, rõ</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary focus:ring-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Mạch nhanh / chậm</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary focus:ring-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Huyết áp ổn định</span></label>
+</div>
+</div>
+<!-- Dinh dưỡng -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">restaurant</span> Dinh dưỡng
+                    </h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Ăn uống ngon miệng</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Chán ăn / Bỏ bữa</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Ăn qua ống thông</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Nôn / Buồn nôn</span></label>
+</div>
+</div>
+<!-- Giấc ngủ & Tinh thần -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">bedtime</span> Giấc ngủ &amp; Tinh thần
+                    </h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Ngủ ngon, đủ giấc</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Mất ngủ / Khó ngủ</span></label>
+<div class="h-px bg-slate-100 my-1"></div>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Ổn định, an tâm</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Lo âu / Căng thẳng</span></label>
+</div>
+</div>
+<!-- Vận động -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">directions_run</span> Vận động
+                    </h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Vận động bình thường</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Hạn chế vận động</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Liệt / Yếu chi</span></label>
+</div>
+</div>
+<!-- Vệ sinh -->
+<div class="bg-white p-4 rounded shadow-sm border border-slate-100">
+<h3 class="text-sm font-bold text-on-surface-variant mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">cleaning_services</span> Vệ sinh
+                    </h3>
+<div class="space-y-2">
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Vệ sinh cá nhân tốt</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Cần hỗ trợ vệ sinh</span></label>
+<label class="flex items-center gap-3 p-2 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Phụ thuộc hoàn toàn</span></label>
+</div>
+</div>
+</div>
+<!-- Risk Assessments -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="bg-white p-4 rounded border border-slate-100 shadow-sm">
+<h3 class="text-[11px] font-bold text-slate-500 uppercase mb-3 tracking-wider">Nguy cơ té ngã</h3>
+<div class="space-y-1">
+<label class="text-sm font-medium flex items-center gap-3 p-2 hover:bg-slate-50 rounded cursor-pointer"><input class="text-primary w-5 h-5 border-slate-300" name="fall" type="radio"/> Thấp</label>
+<label class="text-sm font-medium flex items-center gap-3 p-2 hover:bg-slate-50 rounded cursor-pointer"><input class="text-primary w-5 h-5 border-slate-300" name="fall" type="radio"/> Trung bình</label>
+<label class="text-sm font-medium flex items-center gap-3 p-2 hover:bg-slate-50 rounded cursor-pointer"><input class="text-primary w-5 h-5 border-slate-300" name="fall" type="radio"/> Cao</label>
+</div>
+</div>
+<div class="bg-white p-4 rounded border border-slate-100 shadow-sm">
+<h3 class="text-[11px] font-bold text-slate-500 uppercase mb-3 tracking-wider">Nguy cơ loét</h3>
+<div class="space-y-1">
+<label class="text-sm font-medium flex items-center gap-3 p-2 hover:bg-slate-50 rounded cursor-pointer"><input class="text-primary w-5 h-5 border-slate-300" name="ulcer" type="radio"/> Không nguy cơ</label>
+<label class="text-sm font-medium flex items-center gap-3 p-2 hover:bg-slate-50 rounded cursor-pointer"><input class="text-primary w-5 h-5 border-slate-300" name="ulcer" type="radio"/> Nguy cơ thấp</label>
+<label class="text-sm font-medium flex items-center gap-3 p-2 hover:bg-slate-50 rounded cursor-pointer"><input class="text-primary w-5 h-5 border-slate-300" name="ulcer" type="radio"/> Nguy cơ cao</label>
+</div>
+</div>
+<div class="bg-white p-4 rounded border border-slate-100 shadow-sm">
+<h3 class="text-[11px] font-bold text-slate-500 uppercase mb-3 tracking-wider">NEWS2</h3>
+<div class="space-y-1">
+<label class="text-sm font-medium flex items-center gap-3 p-2 hover:bg-slate-50 rounded cursor-pointer"><input class="text-primary w-5 h-5 border-slate-300" name="news" type="radio"/> Ổn định</label>
+<label class="text-sm font-medium flex items-center gap-3 p-2 hover:bg-slate-50 rounded cursor-pointer"><input class="text-primary w-5 h-5 border-slate-300" name="news" type="radio"/> Cần theo dõi sát</label>
+</div>
+</div>
+</div>
+<!-- Can thiệp Điều dưỡng -->
+<div class="bg-white p-4 rounded border border-primary-fixed/30 shadow-sm">
+<h3 class="text-sm font-bold text-on-surface-variant mb-4 flex items-center gap-2 border-b border-slate-50 pb-2">
+<span class="material-symbols-outlined text-primary">assignment_turned_in</span> Can thiệp Điều dưỡng
+                </h3>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+<label class="flex items-center gap-2 p-3 rounded bg-surface-container-low hover:bg-primary-container/10 transition-colors cursor-pointer border border-transparent hover:border-primary-fixed">
+<input class="rounded text-primary w-4 h-4 border-outline-variant" type="checkbox"/><span class="text-[13px] font-semibold text-on-surface">Thuốc uống</span>
+</label>
+<label class="flex items-center gap-2 p-3 rounded bg-surface-container-low hover:bg-primary-container/10 transition-colors cursor-pointer border border-transparent hover:border-primary-fixed">
+<input class="rounded text-primary w-4 h-4 border-outline-variant" type="checkbox"/><span class="text-[13px] font-semibold text-on-surface">Thuốc tiêm</span>
+</label>
+<label class="flex items-center gap-2 p-3 rounded bg-surface-container-low hover:bg-primary-container/10 transition-colors cursor-pointer border border-transparent hover:border-primary-fixed">
+<input class="rounded text-primary w-4 h-4 border-outline-variant" type="checkbox"/><span class="text-[13px] font-semibold text-on-surface">Truyền dịch</span>
+</label>
+<label class="flex items-center gap-2 p-3 rounded bg-surface-container-low hover:bg-primary-container/10 transition-colors cursor-pointer border border-transparent hover:border-primary-fixed">
+<input class="rounded text-primary w-4 h-4 border-outline-variant" type="checkbox"/><span class="text-[13px] font-semibold text-on-surface">Chụp X-quang</span>
+</label>
+<label class="flex items-center gap-2 p-3 rounded bg-surface-container-low hover:bg-primary-container/10 transition-colors cursor-pointer border border-transparent hover:border-primary-fixed">
+<input class="rounded text-primary w-4 h-4 border-outline-variant" type="checkbox"/><span class="text-[13px] font-semibold text-on-surface">Xét nghiệm</span>
+</label>
+<label class="flex items-center gap-2 p-3 rounded bg-surface-container-low hover:bg-primary-container/10 transition-colors cursor-pointer border border-transparent hover:border-primary-fixed">
+<input class="rounded text-primary w-4 h-4 border-outline-variant" type="checkbox"/><span class="text-[13px] font-semibold text-on-surface">Vệ sinh giường</span>
+</label>
+<label class="flex items-center gap-2 p-3 rounded bg-surface-container-low hover:bg-primary-container/10 transition-colors cursor-pointer border border-transparent hover:border-primary-fixed">
+<input class="rounded text-primary w-4 h-4 border-outline-variant" type="checkbox"/><span class="text-[13px] font-semibold text-on-surface">Đón tiếp NB</span>
+</label>
+<label class="flex items-center gap-2 p-3 rounded bg-surface-container-low hover:bg-primary-container/10 transition-colors cursor-pointer border border-transparent hover:border-primary-fixed">
+<input class="rounded text-primary w-4 h-4 border-outline-variant" type="checkbox"/><span class="text-[13px] font-semibold text-on-surface">Theo dõi DHST</span>
+</label>
+</div>
+</div>
+<!-- Bàn giao -->
+<div class="bg-white p-4 rounded border border-slate-100 shadow-sm">
+<h3 class="text-sm font-bold text-on-surface-variant mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">handshake</span> Bàn giao sau ca
+                </h3>
+<div class="grid grid-cols-2 gap-3">
+<label class="flex items-center gap-3 p-3 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Người bệnh</span></label>
+<label class="flex items-center gap-3 p-3 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Hồ sơ</span></label>
+<label class="flex items-center gap-3 p-3 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Phim chụp</span></label>
+<label class="flex items-center gap-3 p-3 bg-slate-50 rounded"><input class="rounded text-primary w-5 h-5 border-slate-300" type="checkbox"/><span class="text-sm font-medium">Thuốc/dịch truyền</span></label>
+</div>
+</div>
+</form>
+</main>
+<!-- Fixed Bottom Bar -->
+<div class="fixed bottom-0 left-0 w-full z-50 p-4 bg-white border-t border-slate-100 flex gap-3 shadow-[0_-4px_16px_rgba(0,0,0,0.04)]">
+<button class="flex-1 py-3.5 px-6 rounded font-bold text-slate-500 bg-slate-100 hover:bg-slate-200 active:scale-95 transition-all">
+            Hủy
+        </button>
+<button class="flex-[2] py-3.5 px-6 rounded font-bold text-white bg-primary hover:bg-blue-700 shadow-lg shadow-blue-700/20 active:scale-95 transition-all">
+            Lưu phiếu con
+        </button>
+</div>
+</body></html>

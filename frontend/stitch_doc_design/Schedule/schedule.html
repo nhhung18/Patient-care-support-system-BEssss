@@ -1,0 +1,264 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Schedule - MedCare Manager</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9f9ff;
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-white dark:bg-slate-900 shadow-sm border-b border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-icon="medical_services">medical_services</span>
+<h1 class="font-inter text-lg font-bold text-blue-700 dark:text-blue-400 tracking-tight">MedCare Manager</h1>
+</div>
+<div class="flex items-center">
+<img alt="Profile" class="w-10 h-10 rounded-full border-2 border-primary-container" data-alt="A professional close-up portrait of a female medical professional in a crisp white coat against a soft, clinical blue background. The lighting is bright and even, highlighting her friendly yet focused expression. The overall aesthetic is clean, modern, and clinical, emphasizing reliability and professional care in a healthcare setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtgaBsmu2QlSgX2FTxDzS5szNDBZgKunNgmMeR6f6iDXevUtlkUv7q-JvSROXS6WX1H8qMogahwaRrnVbiTtC92rfqPekGCGukzo3BWuhiMTlnpQg3RHrvA8M5YXnbF2wG3u34o394QUFvDSg3A9tKH039x0pa4rxRHxlMjLcCKgAxfjxiDegPSUgCZdPMF0Kz1IwEq68W3eEqNd7y0yFPK0j_kDeQjEHVYiOtMOyGXLcTbVa9kIqdCtrGgKL9aHTC2SgaPhu40EY">
+</div>
+</header>
+<main class="pt-20 pb-32 px-container-margin">
+<!-- Header & Title -->
+<div class="mb-lg">
+<h2 class="font-headline-md text-headline-md text-on-surface">Weekly Schedule</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Manage your shifts and patient consultations</p>
+</div>
+<!-- Horizontal Calendar -->
+<section class="mb-xl overflow-x-auto no-scrollbar -mx-container-margin px-container-margin">
+<div class="flex gap-md py-xs">
+<!-- Day Card Active -->
+<div class="flex-shrink-0 w-16 h-24 flex flex-col items-center justify-center rounded bg-primary-container text-on-primary-container shadow-lg shadow-primary-container/20">
+<span class="font-label-caps text-label-caps opacity-80">MON</span>
+<span class="text-display-lg font-display-lg mt-1">12</span>
+</div>
+<!-- Day Card Inactive -->
+<div class="flex-shrink-0 w-16 h-24 flex flex-col items-center justify-center rounded bg-white border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">TUE</span>
+<span class="text-display-lg font-display-lg text-on-surface mt-1">13</span>
+</div>
+<div class="flex-shrink-0 w-16 h-24 flex flex-col items-center justify-center rounded bg-white border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">WED</span>
+<span class="text-display-lg font-display-lg text-on-surface mt-1">14</span>
+</div>
+<div class="flex-shrink-0 w-16 h-24 flex flex-col items-center justify-center rounded bg-white border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">THU</span>
+<span class="text-display-lg font-display-lg text-on-surface mt-1">15</span>
+</div>
+<div class="flex-shrink-0 w-16 h-24 flex flex-col items-center justify-center rounded bg-white border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">FRI</span>
+<span class="text-display-lg font-display-lg text-on-surface mt-1">16</span>
+</div>
+<div class="flex-shrink-0 w-16 h-24 flex flex-col items-center justify-center rounded bg-white border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SAT</span>
+<span class="text-display-lg font-display-lg text-on-surface mt-1">17</span>
+</div>
+<div class="flex-shrink-0 w-16 h-24 flex flex-col items-center justify-center rounded bg-white border border-outline-variant hover:bg-surface-container-low transition-colors">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SUN</span>
+<span class="text-display-lg font-display-lg text-on-surface mt-1">18</span>
+</div>
+</div>
+</section>
+<!-- Chronological List -->
+<div class="space-y-lg">
+<!-- Shift Header -->
+<div class="flex items-center justify-between border-l-4 border-primary pl-4">
+<div>
+<h3 class="font-title-sm text-title-sm text-on-surface">Main Shift</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Department: ICU</p>
+</div>
+<div class="text-right">
+<span class="font-label-caps text-label-caps text-primary bg-secondary-container px-3 py-1 rounded-full">Active</span>
+<p class="font-body-sm text-body-sm font-semibold mt-1">08:00 - 20:00</p>
+</div>
+</div>
+<!-- Bento Layout for Schedule Items -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Appointment Card 1 -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border border-slate-50 flex gap-md items-start group">
+<div class="w-12 h-12 bg-surface-container-low rounded flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="patient_list">patient_list</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-caps text-label-caps text-primary">09:30 AM</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-error bg-error-container/20 px-2 py-0.5 rounded">High Priority</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface">Sarah Jenkins</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Post-Op Checkup (Room 402)</p>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-primary text-white font-label-caps text-label-caps rounded">View Vitals</button>
+<button class="px-4 py-2 border border-outline text-on-surface-variant font-label-caps text-label-caps rounded">Reschedule</button>
+</div>
+</div>
+</div>
+<!-- Appointment Card 2 -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border border-slate-50 flex gap-md items-start group">
+<div class="w-12 h-12 bg-surface-container-low rounded flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="clinical_notes">clinical_notes</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-caps text-label-caps text-primary">11:00 AM</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-green-600 bg-green-100 px-2 py-0.5 rounded">Follow-up</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface">Michael Ross</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Dialysis Consultation</p>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-primary text-white font-label-caps text-label-caps rounded">Start Session</button>
+</div>
+</div>
+</div>
+<!-- Break Slot -->
+<div class="md:col-span-2 bg-surface-container-low border-2 border-dashed border-outline-variant p-md rounded flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-on-secondary-container" data-icon="coffee">coffee</span>
+<span class="font-body-md text-body-md text-on-secondary-container">Staff Break • 12:30 PM - 01:15 PM</span>
+</div>
+<!-- Appointment Card 3 -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border border-slate-50 flex gap-md items-start group">
+<div class="w-12 h-12 bg-surface-container-low rounded flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="emergency_home">emergency_home</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-caps text-label-caps text-primary">02:45 PM</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100 px-2 py-0.5 rounded">New Admission</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface">Elena Rodriguez</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Triage &amp; Initial Assessment</p>
+<div class="flex gap-2">
+<button class="px-4 py-2 bg-primary text-white font-label-caps text-label-caps rounded">Assign Bed</button>
+</div>
+</div>
+</div>
+<!-- Appointment Card 4 -->
+<div class="bg-white p-lg rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border border-slate-50 flex gap-md items-start group">
+<div class="w-12 h-12 bg-surface-container-low rounded flex items-center justify-center flex-shrink-0 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="family_history">family_history</span>
+</div>
+<div class="flex-grow">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-caps text-label-caps text-primary">04:30 PM</span>
+<span class="text-[10px] font-bold uppercase tracking-wider text-on-secondary-container bg-secondary-container/30 px-2 py-0.5 rounded">Routine</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface">David Chen</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-3">Annual Physical Exam</p>
+<div class="flex gap-2">
+<button class="px-4 py-2 border border-outline text-on-surface-variant font-label-caps text-label-caps rounded">Mark Ready</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for adding new appointment (Contextual to Schedule) -->
+<button class="fixed bottom-28 right-6 w-14 h-14 bg-primary text-white rounded-full shadow-lg flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-3 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_20px_rgba(25,118,210,0.08)]">
+<!-- Home -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider">trang chủ</span>
+</a>
+<!-- Schedule (Active) -->
+<a class="flex flex-col items-center justify-center bg-blue-50 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 rounded px-5 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="calendar_month" style="font-variation-settings: &quot;FILL&quot; 1;">calendar_month</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider">Lịch làm việc</span>
+</a>
+<!-- Alerts -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="notifications">notifications</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider">Thông báo</span>
+</a>
+<!-- Profile -->
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-5 py-2 active:scale-90 transition-transform duration-150" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="account_circle">account_circle</span>
+<span class="font-inter text-[10px] font-bold uppercase tracking-wider">Cá nhân</span>
+</a>
+</nav>
+
+
+</body></html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hồ sơ bệnh án - MedCare Manager</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+  }
+</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-surface min-h-screen text-on-surface font-body-md font-body-md flex flex-col">
+<!-- Task-Focused Header (Suppresses TopAppBar/BottomNavBar/Drawer as per mandate) -->
+<header class="sticky top-0 z-50 bg-surface-container-lowest border-b border-surface-variant px-container-margin py-md flex items-center justify-between shadow-sm">
+<button aria-label="Go Back" class="flex items-center justify-center p-sm rounded-full hover:bg-surface-container transition-colors text-on-surface-variant active:scale-95">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-title-sm text-title-sm text-on-surface absolute left-1/2 -translate-x-1/2">Hồ sơ bệnh án</h1>
+<button aria-label="Print Record" class="flex items-center justify-center p-sm rounded-full hover:bg-surface-container transition-colors text-primary active:scale-95">
+<span class="material-symbols-outlined" data-icon="print">print</span>
+</button>
+</header>
+<main class="flex-1 w-full max-w-6xl mx-auto p-container-margin flex flex-col gap-lg">
+<!-- Patient Profile Header -->
+<section class="bg-surface-container-lowest rounded p-lg shadow-[0_4px_20px_rgba(25,118,210,0.08)] flex flex-col md:flex-row gap-lg items-start md:items-center border border-outline-variant/30">
+<div class="relative">
+<img alt="Patient Avatar" class="w-24 h-24 rounded-full object-cover border-4 border-surface" data-alt="A professional headshot portrait of an elderly Asian woman with a kind expression, wearing a simple collared shirt. The background is a soft, out-of-focus modern medical clinic setting with warm, diffuse natural lighting. The color palette is calming, featuring soft blues and gentle whites, evoking a sense of trust and care." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaDwbdacL9BzWlPZPJHAkVbZIcNagMpc_rQzA-OnZw8EaZ47m1lhkPG4Lr5-lSMC6lKMpqmUqrR8eJM4oP-A-zIOTfAxp-DseJrYxFjIPwt4OthrrxOnWoDsq3qQ0ZRCGfPZcgYjCUOTUmdRnBftDyOzW0oWd1bKNIY1pe4IDJ2Q2shWLeUUMEuUMjjuzAK-ILbD2hAdFYKnJQBhb5aMV78HS7mI5eh2IdPz1ulMmVydRHH-GAJ0FSp94buBvHqjsyUBR6qGRgA-Y"/>
+<div class="absolute bottom-0 right-0 bg-primary-container text-on-primary-container rounded-full p-xs border-2 border-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified_user">verified_user</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col gap-xs">
+<div class="flex items-center gap-sm flex-wrap">
+<h2 class="font-headline-md text-headline-md text-on-surface font-bold">Nguyễn Thị Mai</h2>
+<span class="bg-primary-fixed-dim/20 text-on-primary-fixed-variant px-sm py-xs rounded-full font-label-caps text-label-caps flex items-center gap-xs">
+<span class="w-2 h-2 rounded-full bg-[#10b981]"></span>
+            Ổn định
+          </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-sm flex-wrap">
+<span>ID: PT-2023-8492</span> • 
+          <span>Nữ</span> • 
+          <span>68 Tuổi</span>
+</p>
+</div>
+<div class="flex flex-col gap-sm min-w-[200px] border-t md:border-t-0 md:border-l border-outline-variant/50 pt-md md:pt-0 md:pl-lg w-full md:w-auto">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-outline" data-icon="bloodtype">bloodtype</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Nhóm máu</p>
+<p class="font-title-sm text-title-sm text-on-surface font-bold">O+</p>
+</div>
+</div>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-error" data-icon="warning">warning</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Dị ứng</p>
+<p class="font-body-sm text-body-sm text-error font-bold">Penicillin, Lạc</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Layout for Details -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+<!-- Personal Information (Col 1) -->
+<section class="lg:col-span-1 bg-surface-container-lowest rounded p-lg shadow-[0_4px_20px_rgba(25,118,210,0.08)] border border-outline-variant/30 flex flex-col gap-md h-fit">
+<div class="flex items-center gap-sm border-b border-outline-variant/30 pb-sm">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold tracking-tight">Thông tin cá nhân</h3>
+</div>
+<div class="flex flex-col gap-sm mt-sm">
+<div class="flex justify-between items-center py-sm border-b border-outline-variant/20">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Ngày sinh</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">12/05/1955</span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-outline-variant/20">
+<span class="font-body-sm text-body-sm text-on-surface-variant">CCCD</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">001155123456</span>
+</div>
+<div class="flex justify-between items-center py-sm border-b border-outline-variant/20">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Số điện thoại</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">0901 234 567</span>
+</div>
+<div class="flex flex-col gap-xs py-sm border-b border-outline-variant/20">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Địa chỉ thường trú</span>
+<span class="font-body-sm text-body-sm text-on-surface">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</span>
+</div>
+<div class="flex flex-col gap-xs py-sm">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Liên hệ khẩn cấp</span>
+<div class="flex items-center gap-sm bg-surface-container-low p-sm rounded mt-xs">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined" data-icon="family_restroom">family_restroom</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Nguyễn Văn Bình (Con trai)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">0988 765 432</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- History & Diagnoses (Col 2 & 3) -->
+<div class="lg:col-span-2 flex flex-col gap-lg">
+<!-- Admission History -->
+<section class="bg-surface-container-lowest rounded p-lg shadow-[0_4px_20px_rgba(25,118,210,0.08)] border border-outline-variant/30 flex flex-col gap-md">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="local_hospital">local_hospital</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold tracking-tight">Lịch sử nhập viện</h3>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">2 Bản ghi gần nhất</span>
+</div>
+<div class="relative pl-lg border-l-2 border-surface-container-high ml-sm mt-sm flex flex-col gap-md">
+<!-- Record 1 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-primary border-4 border-surface-container-lowest"></div>
+<div class="bg-surface-container-low rounded p-md border border-outline-variant/20 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start mb-sm flex-wrap gap-sm">
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Khoa Tim Mạch - Bệnh viện Trung Ương</h4>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-highest px-sm py-xs rounded-full">15/08/2023 - 22/08/2023</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs"><strong class="text-on-surface">Lý do:</strong> Đau thắt ngực, khó thở nhẹ về đêm.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant"><strong class="text-on-surface">Bác sĩ phụ trách:</strong> TS.BS Lê Hoàng Nam</p>
+</div>
+</div>
+<!-- Record 2 -->
+<div class="relative">
+<div class="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-surface-variant border-4 border-surface-container-lowest"></div>
+<div class="bg-surface-container-low rounded p-md border border-outline-variant/20 hover:bg-surface-container transition-colors">
+<div class="flex justify-between items-start mb-sm flex-wrap gap-sm">
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Khoa Nội Tiết - Bệnh viện Đa Khoa</h4>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container-highest px-sm py-xs rounded-full">10/02/2022 - 14/02/2022</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-xs"><strong class="text-on-surface">Lý do:</strong> Kiểm tra định kỳ đái tháo đường tuýp 2, điều chỉnh liều insulin.</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant"><strong class="text-on-surface">Bác sĩ phụ trách:</strong> ThS.BS Trần Thị Hương</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Diagnosis History -->
+<section class="bg-surface-container-lowest rounded p-lg shadow-[0_4px_20px_rgba(25,118,210,0.08)] border border-outline-variant/30 flex flex-col gap-md">
+<div class="flex items-center justify-between border-b border-outline-variant/30 pb-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="stethoscope">stethoscope</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold tracking-tight">Chẩn đoán &amp; Tình trạng</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md mt-sm">
+<div class="bg-error-container/30 border border-error/20 p-md rounded flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-error" data-icon="favorite">favorite</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Thiếu máu cục bộ cơ tim</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chẩn đoán từ 2021. Đang điều trị nội khoa, tình trạng hiện tại ổn định. Cần theo dõi huyết áp hàng ngày.</p>
+</div>
+<div class="bg-tertiary-container/10 border border-tertiary/20 p-md rounded flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-tertiary" data-icon="water_drop">water_drop</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Đái tháo đường Tuýp 2</h4>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Chẩn đoán từ 2018. Kiểm soát tốt bằng chế độ ăn và Metformin 500mg x2/ngày. HbA1c gần nhất: 6.8%.</p>
+</div>
+<div class="bg-surface-container p-md rounded flex flex-col gap-sm md:col-span-2">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary" data-icon="pill">pill</span>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Đơn thuốc hiện tại (Đang sử dụng)</h4>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-xs mt-xs">
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest rounded border border-outline-variant/20">
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Aspirin 81mg (1 viên/ngày, sáng)</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest rounded border border-outline-variant/20">
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Atorvastatin 20mg (1 viên/ngày, tối)</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest rounded border border-outline-variant/20">
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Metformin 500mg (2 viên/ngày, sau ăn)</span>
+</div>
+<div class="flex items-center gap-sm p-sm bg-surface-container-lowest rounded border border-outline-variant/20">
+<span class="material-symbols-outlined text-outline text-[18px]" data-icon="check_circle">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Amlodipine 5mg (1 viên/ngày, sáng)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+</body></html>

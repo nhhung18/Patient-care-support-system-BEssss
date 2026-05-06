@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .soft-shadow {
+            box-shadow: 0px 4px 20px rgba(25, 118, 210, 0.08);
+        }
+        .tap-highlight-transparent {
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 h-16 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-700 dark:text-blue-400" data-icon="clinical_notes">clinical_notes</span>
+<h1 class="font-sans text-lg font-semibold tracking-tight text-blue-700 dark:text-blue-400">MedCare Manager</h1>
+</div>
+<div class="h-8 w-8 rounded-full overflow-hidden border border-blue-200 dark:border-blue-800 bg-slate-100 dark:bg-slate-800 flex-shrink-0 cursor-pointer active:opacity-70 transition-opacity">
+<img alt="Medical professional profile picture" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCklNVgcHnV8Op1wAZ919k_smTDJib33rEpXLTKX5eH7IPjeYpK9qS4uGP5PcRUn8KIAOMepMYqKm02pp2I0dIMUm7X5HoXigxbWGBapXg7XCbop22A7_5CrnvCU8-4OCxielIwMVd3wWKFz7WhAnnLeo1Lr0uCUs1rVutZ6abWioeLOVsvz1FE6m3mx4FxaY5hOak5RVMn51ll5kiB68dQMvJU807562K60JnK25Bfk32UL08ZcsIPVSGgU677yh5Hjfd-x4Ql2Mw"/>
+</div>
+</header>
+<main class="pt-24 px-4 md:px-6 max-w-4xl mx-auto space-y-6">
+<!-- Hero Profile Card -->
+<section class="bg-white dark:bg-slate-800 rounded p-6 shadow-sm border border-slate-100 dark:border-slate-700 text-center flex flex-col items-center">
+<div class="relative inline-block mb-4">
+<div class="h-28 w-28 rounded overflow-hidden shadow-md border-4 border-white dark:border-slate-800 bg-slate-100">
+<img alt="Dr. Smith Profile" class="h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX1bGuE4Fm3hgdIYWVHMvsCtFyOlRwJ50O6zBJya7z4W1FZ7RIn2F_0gxxPgJmRjZ4e8hHjZawbr64pZ1exPjrOAisZtrw2a0ZFn_bdmcU--3yiPQewAYt2FvDU3OMDx08gGlvGgM1HDsUL4vLwKfKAV-qwWvDqE8a-csPlilsz4UjwJGDdmXb0ThErNXDpD4IqNu7m6kw9ss9598xft2hkZf16VlIqT0dOugn_uZ0eNwFS6hWS8GFEb9BwYn3KUbuVa-rdHgyyUM"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-green-500 h-5 w-5 rounded-full border-2 border-white dark:border-slate-800 shadow-sm z-10"></div>
+</div>
+<h2 class="font-display-lg text-primary dark:text-blue-400 mb-1">Dr. Smith</h2>
+<div class="flex items-center justify-center gap-2 mb-6">
+<span class="text-on-secondary-container dark:text-slate-300 font-title-sm">Chief Resident</span>
+<span class="h-1.5 w-1.5 rounded-full bg-slate-300 dark:bg-slate-600"></span>
+<span class="text-secondary dark:text-slate-400 font-body-md">ICU Department</span>
+</div>
+</section>
+<!-- Stats Bento Grid -->
+<!-- Personal Info & Security -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Personal Information -->
+<div class="space-y-3">
+<h3 class="font-title-sm text-on-background dark:text-white flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-primary dark:text-blue-400" data-icon="badge">badge</span>
+                    Personal Information
+                </h3>
+<div class="bg-white dark:bg-slate-800 rounded shadow-sm border border-slate-100 dark:border-slate-700 divide-y divide-slate-50 dark:divide-slate-700/50 overflow-hidden">
+<div class="p-4 flex justify-between items-center hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors cursor-pointer group">
+<div>
+<p class="text-secondary dark:text-slate-400 font-label-caps mb-0.5">EMAIL ADDRESS</p>
+<p class="text-on-background dark:text-slate-200 font-body-md">smith.j@medcare.org</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-sm" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="p-4 flex justify-between items-center hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors cursor-pointer group">
+<div>
+<p class="text-secondary dark:text-slate-400 font-label-caps mb-0.5">PHONE NUMBER</p>
+<p class="text-on-background dark:text-slate-200 font-body-md">+1 (555) 902-4421</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors text-sm" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="p-4 flex justify-between items-center">
+<div>
+<p class="text-secondary dark:text-slate-400 font-label-caps mb-0.5">LICENSE NUMBER</p>
+<p class="text-on-background dark:text-slate-200 font-body-md">MD-9920-4122-88</p>
+</div>
+<span class="material-symbols-outlined text-primary dark:text-blue-400 text-sm" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+</div>
+<!-- App Settings -->
+<div class="space-y-3">
+<h3 class="font-title-sm text-on-background dark:text-white flex items-center gap-2 px-1">
+<span class="material-symbols-outlined text-primary dark:text-blue-400" data-icon="settings">settings</span>
+                    App Settings
+                </h3>
+<div class="bg-white dark:bg-slate-800 rounded shadow-sm border border-slate-100 dark:border-slate-700 overflow-hidden divide-y divide-slate-50 dark:divide-slate-700/50">
+<button class="w-full p-4 flex items-center gap-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+<div class="w-10 h-10 rounded bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 dark:group-hover:bg-blue-800/50 transition-colors">
+<span class="material-symbols-outlined text-primary dark:text-blue-400" data-icon="security">security</span>
+</div>
+<div class="text-left flex-1">
+<p class="font-title-sm text-on-background dark:text-slate-200">Security</p>
+<p class="font-body-sm text-secondary dark:text-slate-400">Biometrics &amp; 2FA</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full p-4 flex items-center gap-4 hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors group">
+<div class="w-10 h-10 rounded bg-slate-50 dark:bg-slate-700 flex items-center justify-center flex-shrink-0 group-hover:bg-slate-100 dark:group-hover:bg-slate-600 transition-colors">
+<span class="material-symbols-outlined text-secondary dark:text-slate-400" data-icon="help">help</span>
+</div>
+<div class="text-left flex-1">
+<p class="font-title-sm text-on-background dark:text-slate-200">Support</p>
+<p class="font-body-sm text-secondary dark:text-slate-400">Help Center &amp; Tickets</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-secondary transition-colors" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="w-full p-4 flex items-center gap-4 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors group">
+<div class="w-10 h-10 rounded bg-red-50 dark:bg-red-900/30 flex items-center justify-center flex-shrink-0 group-hover:bg-red-100 dark:group-hover:bg-red-800/50 transition-colors">
+<span class="material-symbols-outlined text-error dark:text-red-400" data-icon="logout">logout</span>
+</div>
+<div class="text-left flex-1">
+<p class="font-title-sm text-error dark:text-red-400">Logout</p>
+<p class="font-body-sm text-error/70 dark:text-red-400/70">Close current session</p>
+</div>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-safe h-20 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(25,118,210,0.08)] rounded-t-xl">
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-300 tap-highlight-transparent active:scale-95 transition-all w-16 h-14 hover:scale-105 duration-200">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-wider mt-1">Ward</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-300 tap-highlight-transparent active:scale-95 transition-all w-16 h-14 hover:scale-105 duration-200 relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-wider mt-1">Alerts</span>
+<span class="absolute top-1 right-3 h-2 w-2 bg-error rounded-full"></span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-blue-600 dark:hover:text-blue-300 tap-highlight-transparent active:scale-95 transition-all w-16 h-14 hover:scale-105 duration-200">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-wider mt-1">Schedule</span>
+</button>
+<button class="flex flex-col items-center justify-center text-blue-700 dark:text-blue-400 font-bold bg-blue-50/50 dark:bg-blue-900/20 rounded px-3 py-1 tap-highlight-transparent active:scale-95 transition-all w-16 h-14 hover:scale-105 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+<span class="text-[11px] font-medium font-sans uppercase tracking-wider mt-1">Profile</span>
+</button>
+</nav>
+</body></html>

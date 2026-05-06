@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MedCare Manager - Ward Management</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: #f9f9ff; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="text-on-surface">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-slate-900 flex justify-between items-center px-6 h-16 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(25,118,210,0.05)] md:pl-[304px]">
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform p-2 -ml-2 rounded-full hover:bg-slate-50 text-slate-600">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-inter text-lg font-semibold tracking-tight text-primary">Quản lý buồng bệnh</h1>
+</div>
+<div class="flex items-center gap-3">
+<img alt="Doctor Profile" class="w-10 h-10 rounded-full border-2 border-primary-fixed shadow-sm" data-alt="A professional headshot of a friendly-looking doctor wearing a white lab coat and a stethoscope. The background is a soft, clinical light blue gradient that feels calm and professional. High-key lighting creates a clean, modern medical aesthetic with a crisp focus on the doctor's reassuring expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuOmaf425VGxR4fybdvt6cXhpO7udcc83LdPbn0PpfTWEvd9RKLBSK1tcFHBFQh_ROBvVIy9oaS_9Dqfr5jElqgl5eaDTfQtlD7_gsuB9AlgRTVKR7ntecRBzUZjAzcftpsQEonp8y9Vgub9Oc8sSCplZ7TG-bCBt4HQ3I02QLqhuNRiNWEq0qM8bHDlCQvpJCviz54vNdCuy_vTxIewOoKaLgKKeOmk78I1x1HBBWM7mWNmEaN0Cbw2WLq4RQs5BVkEak030dCUU"/>
+</div>
+</header>
+<!-- Sidebar (Shared Component Logic) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full w-[280px] py-8 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800 z-[60]">
+<div class="px-8 text-2xl font-black dark:text-blue-400 mb-8 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span>MedCare</span>
+</div>
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3 p-4 bg-surface-container-low rounded">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold">DS</div>
+<div>
+<p class="font-inter text-sm font-semibold text-on-surface">Dr. Smith</p>
+<p class="font-inter text-xs text-secondary">Chief Resident</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-inter text-sm font-medium">Dashboard</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 dark:bg-blue-900/30 dark:text-blue-300 border-l-4 rounded-r-lg cursor-pointer">
+<span class="material-symbols-outlined" data-icon="meeting_room">meeting_room</span>
+<span class="font-inter text-sm font-medium">Quản lý buồng bệnh</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-inter text-sm font-medium">Appointments</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+<span class="font-inter text-sm font-medium">Medical Notes</span>
+</div>
+<div class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 transition-all cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-inter text-sm font-medium">Settings</span>
+</div>
+</nav>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-12 px-6 md:ml-[280px] min-h-screen bg-surface">
+<div class="max-w-7xl mx-auto space-y-8">
+<!-- Search Bar Section -->
+<div class="relative w-full max-w-2xl mx-auto">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-white border-none rounded shadow-[0_8px_30px_rgb(0,0,0,0.04)] focus:ring-2 focus:ring-primary text-body-md text-on-surface placeholder-slate-400" placeholder="Tìm kiếm bệnh nhân hoặc số phòng..." type="text"/>
+</div><div class="flex flex-wrap items-center gap-3 mt-6 max-w-2xl mx-auto px-1">
+<div class="group relative">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-100 rounded-full shadow-sm hover:border-primary transition-all duration-200 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-primary">location_city</span>
+<span class="font-inter text-body-sm font-semibold">Tòa nhà: Tất cả</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">expand_more</span>
+</button>
+</div>
+<div class="group relative">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-100 rounded-full shadow-sm hover:border-primary transition-all duration-200 text-on-surface-variant">
+<span class="material-symbols-outlined text-[20px] text-primary">layers</span>
+<span class="font-inter text-body-sm font-semibold">Tầng: Tất cả</span>
+<span class="material-symbols-outlined text-[20px] text-secondary">expand_more</span>
+</button>
+</div>
+<div class="flex-1"></div>
+<button class="flex items-center gap-1.5 text-primary font-inter text-body-sm font-bold hover:bg-primary/5 px-4 py-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+    Lọc thêm
+  </button>
+</div>
+<!-- Bento Grid of Rooms -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Room Card 1 -->
+<div class="group relative bg-white rounded-[32px] p-8 shadow-[0_4px_20px_rgba(25,118,210,0.08)] hover:shadow-[0_15px_40px_rgba(25,118,210,0.12)] transition-all duration-300 cursor-pointer overflow-hidden active:scale-98">
+<div class="flex flex-col h-full justify-between">
+<div>
+<h3 class="font-inter text-headline-md text-on-surface group-hover:text-primary transition-colors">Phòng Hồi sức 101</h3>
+<p class="text-secondary font-body-sm mt-2">Khoa Cấp cứu - Tầng 1</p>
+</div>
+<div class="mt-12 flex items-end justify-between">
+<div>
+<span class="text-display-lg font-black text-primary">12</span>
+<span class="text-secondary font-medium ml-2">giường trống</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Room Card 2 -->
+<div class="group relative bg-white rounded-[32px] p-8 shadow-[0_4px_20px_rgba(25,118,210,0.08)] hover:shadow-[0_15px_40px_rgba(25,118,210,0.12)] transition-all duration-300 cursor-pointer overflow-hidden active:scale-98">
+<div class="flex flex-col h-full justify-between">
+<div>
+<h3 class="font-inter text-headline-md text-on-surface group-hover:text-primary transition-colors">Phòng Nội khoa 205</h3>
+<p class="text-secondary font-body-sm mt-2">Khoa Nội - Tầng 2</p>
+</div>
+<div class="mt-12 flex items-end justify-between">
+<div>
+<span class="text-display-lg font-black text-slate-300">0</span>
+<span class="text-secondary font-medium ml-2">giường trống</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Room Card 3 (Hero Pattern) -->
+<div class="group relative bg-white rounded-[32px] p-8 shadow-[0_4px_20px_rgba(25,118,210,0.08)] hover:shadow-[0_15px_40px_rgba(25,118,210,0.12)] transition-all duration-300 cursor-pointer overflow-hidden active:scale-98">
+<div class="flex flex-col h-full justify-between">
+<div>
+<h3 class="font-inter text-headline-md text-on-surface group-hover:text-primary transition-colors">Phòng Nhi khoa 302</h3>
+<p class="text-secondary font-body-sm mt-2">Khoa Nhi - Tầng 3</p>
+</div>
+<div class="mt-12 flex items-end justify-between">
+<div>
+<span class="text-display-lg font-black text-primary">05</span>
+<span class="text-secondary font-medium ml-2">giường trống</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Room Card 4 -->
+<div class="group relative bg-white rounded-[32px] p-8 shadow-[0_4px_20px_rgba(25,118,210,0.08)] hover:shadow-[0_15px_40px_rgba(25,118,210,0.12)] transition-all duration-300 cursor-pointer overflow-hidden active:scale-98">
+<div class="flex flex-col h-full justify-between">
+<div>
+<h3 class="font-inter text-headline-md text-on-surface group-hover:text-primary transition-colors">Phòng Hậu phẫu 401</h3>
+<p class="text-secondary font-body-sm mt-2">Khoa Ngoại - Tầng 4</p>
+</div>
+<div class="mt-12 flex items-end justify-between">
+<div>
+<span class="text-display-lg font-black text-primary">08</span>
+<span class="text-secondary font-medium ml-2">giường trống</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Room Card 5 -->
+<div class="group relative bg-white rounded-[32px] p-8 shadow-[0_4px_20px_rgba(25,118,210,0.08)] hover:shadow-[0_15px_40px_rgba(25,118,210,0.12)] transition-all duration-300 cursor-pointer overflow-hidden active:scale-98">
+<div class="flex flex-col h-full justify-between">
+<div>
+<h3 class="font-inter text-headline-md text-on-surface group-hover:text-primary transition-colors">Phòng Lọc máu 105</h3>
+<p class="text-secondary font-body-sm mt-2">Khoa Thận - Tầng 1</p>
+</div>
+<div class="mt-12 flex items-end justify-between">
+<div>
+<span class="text-display-lg font-black text-primary">03</span>
+<span class="text-secondary font-medium ml-2">giường trống</span>
+</div>
+<div class="w-10 h-10 rounded-full border border-slate-100 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Room Card 6 (Special/Maintenance State) -->
+<div class="group relative bg-slate-50 rounded-[32px] p-8 border-2 border-dashed border-slate-200 transition-all duration-300 cursor-not-allowed overflow-hidden">
+<div class="flex flex-col h-full justify-between grayscale opacity-60">
+<div>
+<h3 class="font-inter text-headline-md text-on-surface">Phòng Cách ly 202</h3>
+<p class="text-secondary font-body-sm mt-2">Đang khử khuẩn - Tầng 2</p>
+</div>
+<div class="mt-12 flex items-end justify-between">
+<div>
+<span class="text-display-lg font-black text-slate-300">--</span>
+<span class="text-secondary font-medium ml-2">giường trống</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB for adding rooms - Contextually appropriate for a management screen -->
+</body></html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+
+<script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @theme {
+    --color-primary: #005dac;
+    --color-primary-container: #1976d2;
+    --color-on-primary-container: #fffdff;
+    --color-secondary: #526069;
+    --color-secondary-container: #d3e2ed;
+    --color-on-secondary-container: #56656e;
+    --color-tertiary: #944700;
+    --color-tertiary-container: #ba5b00;
+    --color-on-tertiary-container: #fffeff;
+    --color-surface: #f9f9ff;
+    --color-surface-dim: #d8dae2;
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f2f3fc;
+    --color-surface-container: #ecedf6;
+    --color-surface-container-high: #e6e8f0;
+    --color-surface-container-highest: #e0e2ea;
+    --color-on-surface: #181c21;
+    --color-on-surface-variant: #414752;
+    --color-outline: #717783;
+    --color-outline-variant: #c1c6d4;
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+    --color-primary-fixed: #d4e3ff;
+    --color-on-primary-fixed: #001c3a;
+    --color-on-primary-fixed-variant: #004786;
+    --color-secondary-fixed: #d6e5ef;
+    --color-on-secondary-fixed: #0f1d25;
+    --color-on-secondary-fixed-variant: #3b4951;
+
+    --font-inter: 'Inter', sans-serif;
+    --font-headline-md: 'Inter', sans-serif;
+    --font-body-sm: 'Inter', sans-serif;
+    --font-body-md: 'Inter', sans-serif;
+    --font-label-caps: 'Inter', sans-serif;
+    --font-title-sm: 'Inter', sans-serif;
+    --font-display-lg: 'Inter', sans-serif;
+
+    --radius-sm: 0.25rem;
+    --radius-DEFAULT: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
+    --radius-full: 9999px;
+
+    --spacing-unit: 4px;
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 40px;
+    --spacing-container-margin: 24px;
+    --spacing-gutter: 16px;
+  }
+</style>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #f9f9ff;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="font-body-md text-on-background">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 left-0 w-full z-50 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 shadow-[0_4px_20px_rgba(25,118,210,0.05)] h-16 flex items-center px-6">
+<div class="flex items-center gap-4 w-full">
+<button class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20 active:scale-95 transition-all text-blue-700 dark:text-blue-400">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-inter text-lg font-semibold tracking-tight text-blue-700 dark:text-blue-400">Phiếu truyền dịch</h1>
+<div class="ml-auto">
+<img alt="Doctor Profile" class="w-10 h-10 rounded-full border-2 border-primary-fixed shadow-sm object-cover" data-alt="A professional close-up portrait of a medical practitioner wearing a clean white lab coat and a stethoscope. The background is a soft-focus medical clinic with clean white walls and blue glass partitions, reflecting a high-trust, empathetic healthcare environment. The lighting is bright and airy, maintaining a modern light-mode aesthetic with clinical clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACDjAD67oC1vvWvhGL5zUeP69Swyz8bm_prDFGso7mLRBQ2pgsOrSvfAgFUXdsVxhIwlKC1wdA2CBnJjxn4hle_YY3UZoCKOtzbYwjAKuD4-ImeIPw4kxGaFlGMj0W_qb3qEE1OL3ijnWkRRpaRgOhjFESm5SzATYXUgkr2ZfuZ0H2TdAtCphoUW9LlH7TTaZ4rb6Gbdcwwnu2RDIKegSelwwmrsO_FB8jIzYxEDw0itR8uRF-6QJxPwamFtmZcTxQPDUML-NG370"/>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="pt-24 px-6 md:pl-[304px] max-w-7xl mx-auto pb-12">
+<!-- Sidebar Shell (Web only) -->
+<aside class="hidden md:flex flex-col fixed left-0 top-0 h-full w-[280px] py-8 bg-white dark:bg-slate-900 border-r border-slate-100 dark:border-slate-800 z-40">
+<div class="px-6 mb-8">
+<div class="text-2xl font-black text-blue-700 dark:text-blue-400 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="medical_services">medical_services</span>
+<span>MedCare</span>
+</div>
+</div>
+<nav class="flex-1 space-y-1 px-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Dashboard
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 border-l-4 border-blue-700 rounded-r-lg font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="event" style="font-variation-settings: 'FILL' 1;">event</span> Appointments
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="description">description</span> Medical Notes
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all font-inter text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="emergency">emergency</span> Emergency
+                </a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 border-l-4 border-transparent hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-all font-inter text-sm font-medium mt-auto" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span> Settings
+                </a>
+</nav>
+<div class="px-6 pt-6 border-t border-slate-100 dark:border-slate-800">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-blue-100 dark:bg-blue-900/40 flex items-center justify-center text-blue-700 font-bold">DS</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Dr. Smith</p>
+<p class="text-xs text-slate-500">Chief Resident</p>
+</div>
+</div>
+</div>
+</aside>
+<section class="max-w-4xl">
+<!-- Patient Summary Card -->
+<div class="bg-white dark:bg-slate-800 rounded p-6 shadow-[0_4px_20px_rgba(25,118,210,0.08)] mb-8 border border-blue-50 dark:border-slate-700 relative overflow-hidden">
+<div class="flex justify-between items-start mb-4">
+<span class="bg-blue-100 text-blue-700 px-3 py-1 rounded text-[10px] font-bold uppercase tracking-wider">BỆNH NHÂN</span>
+<span class="bg-green-50 text-green-600 px-3 py-1 rounded-full text-xs font-medium border border-green-100">Đang điều trị</span>
+</div>
+<div class="mb-6">
+<h2 class="text-2xl font-bold text-on-surface mb-1">Nguyễn Văn A</h2>
+<p class="text-body-sm text-outline"><span class="font-medium">Mã BN:</span> P-98214</p>
+</div>
+<div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-100 dark:border-slate-700">
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-widest mb-1">KHOA</span>
+<p class="font-title-sm text-on-surface leading-tight">Nội Tổng Hợp</p>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-widest mb-1">PHÒNG</span>
+<p class="font-title-sm text-on-surface">402</p>
+</div>
+<div>
+<span class="block text-[10px] font-bold text-outline uppercase tracking-widest mb-1">GIƯỜNG</span>
+<p class="font-title-sm text-on-surface">B-12</p>
+</div>
+</div>
+<div class="absolute top-0 right-0 w-32 h-32 bg-blue-50/20 rounded-full -mr-16 -mt-16 pointer-events-none"></div>
+</div>
+<!-- IV Infusion Form -->
+<div class="bg-white dark:bg-slate-800 rounded shadow-[0_4px_20px_rgba(25,118,210,0.08)] border border-slate-100 dark:border-slate-700 overflow-hidden">
+<div class="px-6 py-4 bg-surface-container-low border-b border-slate-100 dark:border-slate-700 flex items-center gap-2">
+<span class="material-symbols-outlined text-blue-700" data-icon="vaccines">vaccines</span>
+<h3 class="font-title-sm text-on-surface">Thông tin truyền dịch</h3>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<!-- Date and Batch -->
+<div class="space-y-2">
+<label class="font-label-caps text-on-surface-variant">Ngày tháng</label>
+<div class="relative">
+<input class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md" type="date" value="2024-05-24"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-on-surface-variant">Lô/Số sản xuất</label>
+<input class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md" placeholder="VD: LSX-202401" type="text"/>
+</div>
+<!-- Fluid Info -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-label-caps text-on-surface-variant">Tên dịch truyền / Hàm lượng</label>
+<div class="relative">
+<input class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md" placeholder="Nhập tên thuốc/dịch truyền và nồng độ..." type="text"/>
+<span class="absolute right-3 top-3 material-symbols-outlined text-outline" data-icon="search">search</span>
+</div>
+</div>
+<!-- Quantity and Rate -->
+<div class="space-y-2">
+<label class="font-label-caps text-on-surface-variant">Số lượng (ml)</label>
+<div class="flex items-center gap-2">
+<input class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md" placeholder="500" type="number"/>
+<span class="text-body-sm text-outline font-medium">ml</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-on-surface-variant">Tốc độ (giọt/phút)</label>
+<div class="flex items-center gap-3">
+<input class="flex-1 accent-primary" max="120" min="10" step="5" type="range"/>
+<div class="bg-blue-50 px-3 py-1 rounded border border-blue-100 text-blue-700 font-bold text-sm min-w-[60px] text-center">
+                                40 <span class="text-[10px]">g/p</span>
+</div>
+</div>
+</div>
+<!-- Timing -->
+<div class="space-y-2">
+<label class="font-label-caps text-on-surface-variant">Thời gian bắt đầu</label>
+<input class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md" type="time"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-on-surface-variant">Thời gian kết thúc (Dự kiến)</label>
+<input class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md" type="time"/>
+</div>
+<!-- Staff -->
+<div class="space-y-2">
+<label class="font-label-caps text-on-surface-variant">Bác sĩ chỉ định</label>
+<select class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md appearance-none">
+<option>BS. Nguyễn Thành Trung</option>
+<option>BS. Lê Thị Thu</option>
+<option>BS. Phạm Minh Hoàng</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-caps text-on-surface-variant">Điều dưỡng thực hiện</label>
+<select class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md appearance-none">
+<option>ĐD. Trần Thị Lan</option>
+<option>ĐD. Hoàng Văn Nam</option>
+<option>ĐD. Vũ Mỹ Linh</option>
+</select>
+</div>
+<!-- Notes -->
+<div class="space-y-2 md:col-span-2">
+<label class="font-label-caps text-on-surface-variant">Ghi chú theo dõi</label>
+<textarea class="w-full bg-white border border-outline-variant rounded px-4 py-2.5 focus:ring-2 focus:ring-primary focus:border-primary transition-all outline-none text-body-md resize-none" placeholder="Ghi nhận phản ứng của bệnh nhân hoặc các lưu ý đặc biệt khác..." rows="3"></textarea>
+</div>
+</div>
+<!-- Form Actions -->
+<div class="px-6 py-6 bg-slate-50 dark:bg-slate-900/50 border-t border-slate-100 dark:border-slate-700 flex items-center justify-end gap-4"><button class="px-6 py-2.5 rounded font-title-sm text-secondary hover:bg-secondary-container/30 transition-all active:scale-95">
+    Hủy
+</button>
+<button class="px-8 py-2.5 bg-primary-container text-on-primary-container rounded font-title-sm shadow-md hover:shadow-lg active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="add_task">add_task</span>
+    Tạo phiếu
+</button></div>
+</div>
+<!-- Recent History Bento-like List -->
+<div class="mt-12">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-title-sm text-on-surface">Lịch sử truyền dịch gần đây</h3>
+<button class="text-primary font-bold text-sm hover:underline">Xem tất cả</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Mobile Navigation Bar -->
+<!-- Floating Background Decor for Clinical Ambience -->
+<div class="fixed top-0 right-0 w-[500px] h-[500px] bg-blue-50/40 rounded-full -mr-64 -mt-64 blur-3xl -z-10 pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 w-[300px] h-[300px] bg-indigo-50/30 rounded-full -ml-32 -mb-32 blur-3xl -z-10 pointer-events-none"></div>
+</body></html>
